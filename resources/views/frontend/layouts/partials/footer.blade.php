@@ -1,0 +1,1 @@
+<footer class="bg-zinc-500 py-4 dark:bg-zinc-900 block">FOOTER</footer>
