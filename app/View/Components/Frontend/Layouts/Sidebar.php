@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Layouts\Frontend;
+namespace App\View\Components\Frontend\Layouts;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class App extends Component
+class Sidebar extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class App extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('frontend.layouts.app');
+        return view('frontend.layouts.partials.sidebar');
     }
 }
