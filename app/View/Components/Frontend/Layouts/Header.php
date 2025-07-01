@@ -8,12 +8,12 @@ use Illuminate\View\Component;
 
 class Header extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+
+    public string $page_slug = '';
+
+    public function __construct(string $page_slug = '')
     {
-        //
+        $this->page_slug = $page_slug;
     }
 
     /**

@@ -9,12 +9,12 @@
     <x-frontend::header />
     <div class="flex flex-1">
         {{-- Sidebar --}}
-        <x-frontend::sidebar />
+        <x-frontend::sidebar :page_slug="$page_slug ?? null" />
 
         {{-- Main Content Area --}}
-        <main class="flex-grow">
+        <div class="flex-grow">
             {{ $slot }}
-        </main>
+        </div>
 
     </div>
     <x-frontend::footer />

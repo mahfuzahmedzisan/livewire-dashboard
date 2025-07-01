@@ -6,8 +6,14 @@
         <flux:brand href="{{ url('/') }}" wire:navigate logo="https://fluxui.dev/img/demo/dark-mode-logo.png"
             name="Acme Inc." class="max-lg:hidden! hidden dark:flex" />
         <flux:navbar class="-mb-px max-lg:hidden">
-            <flux:navbar.item href="{{ url('/') }}" wire:navigate current>Home</flux:navbar.item>
-            <flux:navbar.item href="#" wire:navigate>Products</flux:navbar.item>
+
+            <flux:navbar.item href="{{ url('/') }}" wire:navigate
+                class="@if (isset($page_slug) && $page_slug == 'home') bg-red-500 !text-white @endif">
+                Home
+            </flux:navbar.item>
+            <flux:navbar.item href="" wire:navigate>
+                Products
+            </flux:navbar.item>
             <flux:separator vertical variant="subtle" class="my-2" />
             <flux:dropdown class="max-lg:hidden">
                 <flux:navbar.item icon:trailing="chevron-down">Categories</flux:navbar.item>
@@ -40,7 +46,12 @@
                 <flux:menu.item icon="user">Profile</flux:menu.item>
                 <flux:menu.item icon="cog-6-tooth">Settings</flux:menu.item>
                 <flux:menu.separator />
-                <flux:menu.item icon="arrow-right-start-on-rectangle">Logout</flux:menu.menu.item>
+                <flux:menu.item icon="arrow-right-start-on-rectangle"
+                    onclick="document.getElementById('logout').submit()">Logout</flux:menu.item>
+                <form action="{{ route('logout') }}" method="POST" id="logout">
+                    @csrf
+
+                </form>
             </flux:menu>
         </flux:dropdown>
     </flux:header>
