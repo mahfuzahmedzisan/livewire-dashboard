@@ -10,7 +10,7 @@
 
     <div class="sidebar-glass-card h-full custom-scrollbar rounded-xl overflow-y-auto">
         <!-- Sidebar Header -->
-        <a href="{{ route('admin.dashboard') }}" class="p-3 border-b border-white/10 inline-block">
+        <a href="{{ route('dashboard') }}" class="p-3 border-b border-white/10 inline-block">
             <div class="flex items-center gap-4">
                 <div
                     class="w-10 h-10 glass-card shadow inset-shadow-lg bg-bg-white dark:bg-bg-black p-0 rounded-xl flex items-center justify-center">
@@ -32,10 +32,10 @@
             <!-- Dashboard -->
 
             {{-- 1. SINGLE NAVLINK (replaces your original single-navlink) --}}
-            <x-admin.navlink type="single" icon="layout-dashboard" name="Dashboard" :route="route('admin.dashboard')"
-                active="admin-dashboard" :page_slug="$active" permission="" />
+            <x-admin.navlink type="single" icon="layout-dashboard" name="Dashboard" :route="route('dashboard')"
+                active="admin-dashboard" :page_slug="$active"  />
 
-            <x-admin.navlink type="single" icon="layout-dashboard" name="Button UI" :route="route('button-ui')"
+            <x-admin.navlink type="single" icon="layout-dashboard" name="Button UI"
                 active="button-ui" :page_slug="$active" />
 
 
@@ -43,24 +43,21 @@
                 :items="[
                     [
                         'name' => 'Admin',
-                        'route' => route('am.admin.index'),
+                        'route' => '#',
                         'icon' => 'user',
                         'active' => 'admin',
-                        'permission' => 'admin-list',
                     ],
                     [
                         'name' => 'Role',
-                        'route' => route('am.role.index'),
+                        'route' => '#',
                         'icon' => 'shield',
                         'active' => 'role',
-                        'permission' => 'role-list',
                     ],
                     [
                         'name' => 'Permission',
-                        'route' => route('am.permission.index'),
+                        'route' => '#',
                         'icon' => 'shield-check',
                         'active' => 'permission',
-                        'permission' => 'permission-list',
                     ],
                 ]" />
 
@@ -85,7 +82,6 @@
                         'route' => '#',
                         'icon' => 'user',
                         'active' => 'admin-users',
-                        'permission' => 'user-list',
                     ],
                 ]" />
 
@@ -93,10 +89,9 @@
                 :items="[
                     [
                         'name' => 'Credit',
-                        'route' => route('pm.credit.index'),
+                        'route' => '#',
                         'icon' => 'user',
                         'active' => 'credit',
-                        'permission' => 'credit-list',
                     ],
                 ]" />
         </nav>

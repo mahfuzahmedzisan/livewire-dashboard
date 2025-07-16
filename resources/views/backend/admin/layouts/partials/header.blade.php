@@ -71,7 +71,7 @@
                         :class="open ? '!block' : '!hidden'">
                         <x-admin.profile-navlink route="#" name="{{ __('Profile') }}" />
                         <x-admin.profile-navlink route="#" name="{{ __('Settings') }}" />
-                        <x-admin.profile-navlink route="{{ route('admin.logout') }}" logout='true'
+                        <x-admin.profile-navlink route="{{ route('logout') }}" logout='true'
                             name="{{ __('Sign Out') }}" />
                         {{-- <a href="#"
                          class="block px-4 py-2 text-text-white hover:bg-bg-white/10 transition-colors">Profile</a>
@@ -89,7 +89,7 @@
         <!-- Breadcrumb -->
         <div class="px-4 lg:px-6 pb-4">
             <nav class="flex items-center gap-2 text-sm text-text-light-primary/60 dark:text-text-dark-primary">
-                <a href="{{ route('admin.dashboard') }}">{{ __('Admin Dashboard') }}</a>
+                <a href="{{ route('dashboard') }}">{{ __('Admin Dashboard') }}</a>
                 <i data-lucide="chevron-right" class="w-4 h-4"></i>
                 <span class="text-text-light-primary dark:text-text-white capitalize"> {{ $breadcrumb }}</span>
             </nav>

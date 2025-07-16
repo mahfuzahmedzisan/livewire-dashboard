@@ -1,4 +1,4 @@
-<x-admin::layout>
+<main>
     <x-slot name="title">Admin Dashboard</x-slot>
     <x-slot name="breadcrumb">Dashboard</x-slot>
     <x-slot name="page_slug">admin-dashboard</x-slot>
@@ -177,4 +177,4 @@
             </div>
         </div> --}}
     </section>
-</x-admin::layout>
+</div>
