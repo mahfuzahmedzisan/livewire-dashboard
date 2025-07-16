@@ -115,7 +115,7 @@
         @if ($type === 'single')
             <!-- Single Navlink (like original single-navlink) -->
             @if (empty($permission) || auth()->user()->can($permission))
-                <a href="{{ $route }}"
+                <a href="{{ $route }}" wire:navigate
                     class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10 text-text-white transition-all duration-200 group {{ $isMainActive ? 'active' : '' }}">
                     <div
                         class="w-8 h-8 bg-bg-black/10 dark:bg-bg-white/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
@@ -137,7 +137,8 @@
                     <span x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                         x-transition:enter="transition-all duration-300 delay-75"
                         x-transition:enter-start="opacity-0 translate-x-4"
-                        x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition-all duration-200"
+                        x-transition:enter-end="opacity-100 translate-x-0"
+                        x-transition:leave="transition-all duration-200"
                         x-transition:leave-start="opacity-100 translate-x-0"
                         x-transition:leave-end="opacity-0 -translate-x-4"
                         class="font-medium {{ $isMainActive ? 'text-text-black dark:text-text-white' : 'text-text-light-secondary dark:text-text-dark-primary' }}">{{ __($name) }}</span>
@@ -275,6 +276,7 @@
                         @if (isset($item['type']) && $item['type'] === 'single')
                             <!-- Single Navigation Item -->
                             <a href="{{ empty($item['route']) ? 'javascript:void(0);' : $item['route'] }}"
+                                wire:navigate
                                 class="flex items-center gap-3 p-3 mx-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all duration-200 group {{ isset($item['active']) && $page_slug == $item['active'] ? 'bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800' : '' }}">
                                 <div
                                     class="w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -353,7 +355,7 @@
                                             $multiSubitemIcon = $subitem['icon'] ?? $defaultMultiSubitemIcon;
                                             $multiSubitemBoxicon = $subitem['boxicon'] ?? false;
                                         @endphp
-                                        <a href="{{ $subitem['route'] }}"
+                                        <a href="{{ $subitem['route'] }}" wire:navigate
                                             class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all duration-200 group {{ isset($subitem['active']) && $page_slug == $subitem['active'] ? 'bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800' : '' }}">
                                             <div
                                                 class="w-6 h-6 bg-gray-100 dark:bg-gray-700 rounded flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -380,6 +382,7 @@
                             <!-- Regular dropdown item -->
 
                             <a href="{{ empty($item['route']) ? 'javascript:void(0);' : $item['route'] }}"
+                                wire:navigate
                                 class="flex items-center gap-3 p-3 mx-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all duration-200 group {{ isset($item['active']) && $page_slug == $item['active'] ? 'bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800' : '' }}">
                                 <div
                                     class="w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -426,7 +429,7 @@
 
                     @if (isset($item['type']) && $item['type'] === 'single')
                         <!-- Single Navigation Item -->
-                        <a href="{{ empty($item['route']) ? 'javascript:void(0);' : $item['route'] }}"
+                        <a href="{{ empty($item['route']) ? 'javascript:void(0);' : $item['route'] }}" wire:navigate
                             class="sidebar-item flex items-center gap-4 p-2 rounded-lg hover:bg-bg-black/5 dark:hover:bg-bg-white/5 text-text-white transition-all duration-200 group {{ isset($item['active']) && $page_slug == $item['active'] ? 'bg-violet-50 dark:bg-violet-900/20' : '' }}">
                             <div
                                 class="w-6 h-6 bg-bg-black/5 dark:bg-bg-white/5 rounded-md flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -481,7 +484,7 @@
                                         $multiSubitemIcon = $subitem['icon'] ?? $defaultMultiSubitemIcon;
                                         $multiSubitemBoxicon = $subitem['boxicon'] ?? false;
                                     @endphp
-                                    <a href="{{ $subitem['route'] }}"
+                                    <a href="{{ $subitem['route'] }}" wire:navigate
                                         class="flex items-center gap-3 p-2 rounded-lg hover:bg-bg-black/5 dark:hover:bg-bg-white/5 transition-all duration-200 group {{ isset($subitem['active']) && $page_slug == $subitem['active'] ? 'bg-violet-50 dark:bg-violet-900/20' : '' }}">
                                         <div
                                             class="w-5 h-5 bg-bg-black/5 dark:bg-bg-white/5 rounded flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -507,7 +510,7 @@
                         </div>
                     @else
                         <!-- Regular dropdown item -->
-                        <a href="{{ empty($item['route']) ? 'javascript:void(0);' : $item['route'] }}"
+                        <a href="{{ empty($item['route']) ? 'javascript:void(0);' : $item['route'] }}" wire:navigate
                             class="flex items-center gap-3 p-2 rounded-lg hover:bg-bg-black/5 dark:hover:bg-bg-white/5 transition-all duration-200 group {{ isset($item['active']) && $page_slug == $item['active'] ? 'bg-violet-50 dark:bg-violet-900/20' : '' }}">
                             <div
                                 class="w-6 h-6 bg-bg-black/5 dark:bg-bg-white/5 rounded-md flex items-center justify-center group-hover:scale-110 transition-transform">

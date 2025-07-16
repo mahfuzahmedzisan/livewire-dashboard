@@ -59,6 +59,7 @@
         });
     </script>
     {{-- Custom CSS  --}}
+    @fluxAppearance()
     @stack('css')
 
 </head>
@@ -543,6 +544,7 @@
     </script>
     {{-- Custom JS --}}
     <script src="{{ asset('assets/js/password.js') }}"></script>
+    @fluxScripts()
     @stack('js')
 
 </body>
