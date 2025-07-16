@@ -6,7 +6,7 @@
 </head>
 
 <body class="min-h-screen bg-white dark:bg-zinc-800 flex flex-col">
-    <x-frontend::header />
+    
     <div class="flex flex-1">
         {{-- Sidebar --}}
         <x-frontend::sidebar :page_slug="$page_slug ?? null" />

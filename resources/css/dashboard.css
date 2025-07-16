@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-@import url('datatables.net-dt');
+/* @import url('datatables.net-dt');
 @import url('datatables.net-autofill-dt');
 @import url('datatables.net-buttons-dt');
 @import url('datatables.net-colreorder-dt');
@@ -9,12 +9,12 @@
 @import url('datatables.net-responsive-dt');
 @import url('datatables.net-rowreorder-dt');
 @import url('datatables.net-scroller-dt');
-@import url('datatables.net-searchbuilder-dt');
+@import url('datatables.net-searchbuilder-dt'); */
 
 @import 'tailwindcss';
 @plugin "daisyui";
 
-@plugin '@tailwindcss/forms';
+/* @plugin '@tailwindcss/forms'; */
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source "../views";

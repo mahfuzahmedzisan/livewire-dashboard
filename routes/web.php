@@ -12,7 +12,9 @@ use App\Livewire\Frontend\Home as FrontendHome;
 
 Route::get('/',  FrontendHome::class)->name('home');
 
-Route::view('dashboard', 'dashboard')
+use App\Livewire\Admin\Dashboard;
+
+Route::get('dashboard', Dashboard::class)
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 

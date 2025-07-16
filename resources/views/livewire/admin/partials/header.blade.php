@@ -3,7 +3,7 @@
         <div class="flex items-center justify-between p-4 lg:p-6">
             <div class="flex items-center gap-4">
                 <!-- Menu Toggle Button -->
-                <button @click="toggleSidebar()"
+                <button @click="$dispatch('toggle-sidebar')"
                     class="p-2 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10 dark:text-text-white text-text-light-primary transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 group"
                     :aria-label="desktop ? (sidebar_expanded ? 'Collapse sidebar' : 'Expand sidebar') : (mobile_menu_open ?
                         'Close menu' : 'Open menu')">
@@ -39,7 +39,7 @@
 
 
                 <!-- Notifications -->
-                <button @click="toggleNotifications()"
+                <button @click="$wire.toggleNotifications()"
                     class="relative p-2 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10 transition-colors">
                     <i data-lucide="bell" class="w-5 h-5 text-text-light-primary dark:text-text-white"></i>
                     <div x-show="notifications.length > 0"
