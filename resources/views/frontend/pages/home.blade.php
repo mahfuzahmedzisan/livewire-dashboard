@@ -24,7 +24,7 @@
                 @else
                     <flux:button wire:navigate href="{{ route('login') }}" variant="primary">Login</flux:button>
                     <flux:button wire:navigate href="{{ route('register') }}">Register</flux:button>
-                    <flux:button wire:navigate href="{{ route('register') }}" variant="danger">Admin Login</flux:button>
+                    <flux:button wire:navigate href="{{ route('login') }}" variant="danger">Admin Login</flux:button>
                 @endif
             </flux:button.group>
         </div>
