@@ -11,7 +11,7 @@
             <flux:button.group class="mt-4 justify-center">
                 @if (auth()->check())
                     @if (auth()->user()->isAdminUser())
-                        <flux:button wire:navigate href="{{ route('admin.dashboard') }}" variant="primary"
+                        <flux:button wire:navigate href="{{ route('dashboard') }}" variant="primary"
                             color="violet">
                             Admin
                             Dashboard
