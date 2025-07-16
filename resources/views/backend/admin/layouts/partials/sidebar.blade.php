@@ -33,10 +33,10 @@
 
             {{-- 1. SINGLE NAVLINK (replaces your original single-navlink) --}}
             <x-admin.navlink type="single" icon="layout-dashboard" name="Dashboard" :route="route('dashboard')"
-                active="admin-dashboard" :page_slug="$active"  />
+                active="admin-dashboard" :page_slug="$active" />
 
-            <x-admin.navlink type="single" icon="layout-dashboard" name="Button UI"
-                active="button-ui" :page_slug="$active" />
+            <x-admin.navlink type="single" icon="layout-dashboard" name="Button UI" active="button-ui"
+                :page_slug="$active" />
 
 
             <x-admin.navlink type="dropdown" icon="users" name="Admin Management" :page_slug="$active"
