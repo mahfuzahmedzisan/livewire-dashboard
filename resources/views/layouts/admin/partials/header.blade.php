@@ -4,7 +4,7 @@
             <div class="flex items-center gap-4">
                 <!-- Menu Toggle Button -->
                 <button @click="toggleSidebar()"
-                    class="p-2 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10 dark:text-text-white text-text-light-primary transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 group"
+                    class="p-2 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10  text-text-primary transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 group"
                     :aria-label="desktop ? (sidebar_expanded ? 'Collapse sidebar' : 'Expand sidebar') : (mobile_menu_open ?
                         'Close menu' : 'Open menu')">
                     <flux:icon name="bars-4" x-show="!sidebar_expanded && !mobile_menu_open"
@@ -14,9 +14,9 @@
                 </button>
 
                 <div class="hidden sm:block">
-                    <h1 class="text-xl lg:text-2xl font-bold dark:text-text-white text-text-light-primary">Good morning,
+                    <h1 class="text-xl lg:text-2xl font-bold text-text-primary">Good morning,
                         Alex!</h1>
-                    <p class="text-text-light-secondary dark:text-text-dark-primary text-sm">Here's what's happening
+                    <p class="text-text-light-secondary text-text-secondary text-sm">Here's what's happening
                         today
                     </p>
                 </div>
@@ -28,23 +28,17 @@
                 <x-admin.search-form placeholder="Search here..." />
 
                 {{-- <!-- Theme Toggle --> --}}
-                <!-- Theme Toggle Button (Only Light/Dark) -->
-                {{-- <button @click="$store.theme.toggleTheme()"
-                    class="p-2 rounded-xl hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
-                    data-tooltip="Toggle theme"
-                    :title="$store.theme.current.charAt(0).toUpperCase() + $store.theme.current.slice(1) + ' mode'">
-                    <flux:icon name="sun" x-show="!$store.theme.darkMode"
-                        class="w-5 h-5 text-text-light-primary dark:text-text-white" />
-                    <flux:icon name="moon" x-show="$store.theme.darkMode"
-                        class="w-5 h-5 text-text-light-primary dark:text-text-white" />
-                </button> --}}
-
+                <flux:button x-data x-on:click="$flux.dark = !$flux.dark" variant="subtle"
+                    aria-label="Toggle dark mode">
+                    <flux:icon name="moon" class="w-5 h-5" x-show="$flux.dark" />
+                    <flux:icon name="sun" class="w-5 h-5" x-show="!$flux.dark" />
+                </flux:button>
 
 
                 <!-- Notifications -->
                 <button @click="toggleNotifications()"
                     class="relative p-2 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10 transition-colors">
-                    <flux:icon name="bell" class="w-5 h-5 text-text-light-primary dark:text-text-white" />
+                    <flux:icon name="bell" class="w-5 h-5 text-accent" />
                     <div x-show="notifications.length > 0"
                         class="absolute top-1 right-1 w-2 h-2 bg-red-400 rounded-full notification-badge">
                     </div>
@@ -77,12 +71,12 @@
                         <x-admin.profile-navlink route="{{ route('logout') }}" logout='true'
                             name="{{ __('Sign Out') }}" />
                         {{-- <a href="#"
-                         class="block px-4 py-2 text-text-white hover:bg-bg-white/10 transition-colors">Profile</a>
+                         class="block px-4 py-2 text-text-primary hover:bg-bg-white/10 transition-colors">Profile</a>
                      <a href="#"
-                         class="block px-4 py-2 text-text-white hover:bg-bg-white/10 transition-colors">Settings</a>
+                         class="block px-4 py-2 text-text-primary hover:bg-bg-white/10 transition-colors">Settings</a>
                      <div class="border-t border-white/10 my-2"></div>
                      <a href="#"
-                         class="block px-4 py-2 text-text-white hover:bg-bg-white/10 transition-colors">Sign
+                         class="block px-4 py-2 text-text-primary hover:bg-bg-white/10 transition-colors">Sign
                          out</a> --}}
                     </div>
                 </div>
@@ -91,10 +85,10 @@
 
         <!-- Breadcrumb -->
         <div class="px-4 lg:px-6 pb-4">
-            <nav class="flex items-center gap-2 text-sm text-text-light-primary/60 dark:text-text-dark-primary">
+            <nav class="flex items-center gap-2 text-sm text-text-secondary">
                 <a href="{{ route('admin.dashboard') }}">{{ __('Admin Dashboard') }}</a>
                 <flux:icon name="chevron-right" class="w-4 h-4" />
-                <span class="text-text-light-primary dark:text-text-white capitalize"> {{ $breadcrumb }}</span>
+                <span class="text-text-muted capitalize"> {{ $breadcrumb }}</span>
             </nav>
         </div>
     </div>

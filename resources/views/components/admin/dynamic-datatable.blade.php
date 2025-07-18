@@ -23,7 +23,7 @@
     <div class="glass-card rounded-2xl p-6">
         <div class="flex items-center justify-between">
             <div>
-                <h2 class="text-2xl font-bold text-text-black dark:text-text-white">{{ $title }}</h2>
+                <h2 class="text-2xl font-bold text-text-primary ">{{ $title }}</h2>
                 <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ $description }}</p>
             </div>
             <button id="addNewBtn-{{ $tableId }}"

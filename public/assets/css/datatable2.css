@@ -8,18 +8,7 @@
     --warning-color: #f59e0b;
 }
 
-/* Glass card effect */
-.glass-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
 
-.dark .glass-card {
-    background: rgba(31, 41, 55, 0.8);
-    border: 1px solid rgba(75, 85, 99, 0.2);
-}
 
 /* Button styles */
 .btn-primary {

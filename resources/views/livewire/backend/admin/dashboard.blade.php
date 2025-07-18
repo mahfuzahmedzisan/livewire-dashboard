@@ -30,10 +30,10 @@
                         +12%
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 dark:text-text-white mb-1"
+                <h3 class="text-2xl font-bold text-gray-800  mb-1"
                     x-text="stats.users.toLocaleString()">
                     12,384</h3>
-                <p class="text-gray-800/60 dark:text-text-dark-primary text-sm">Total Users</p>
+                <p class="text-gray-800/60  text-sm">Total Users</p>
                 <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full progress-bar"
                         style="width: 75%;"></div>
@@ -51,9 +51,9 @@
                         +23%
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 dark:text-text-white mb-1">$<span
+                <h3 class="text-2xl font-bold text-gray-800  mb-1">$<span
                         x-text="stats.revenue.toLocaleString()">48,392</span></h3>
-                <p class="text-gray-800/60 dark:text-text-dark-primary text-sm">Total Revenue</p>
+                <p class="text-gray-800/60  text-sm">Total Revenue</p>
                 <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full progress-bar"
                         style="width: 60%;"></div>
@@ -71,10 +71,10 @@
                         -5%
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 dark:text-text-white mb-1"
+                <h3 class="text-2xl font-bold text-gray-800  mb-1"
                     x-text="stats.orders.toLocaleString()">
                     2,847</h3>
-                <p class="text-gray-800/60 dark:text-text-dark-primary text-sm">Total Orders</p>
+                <p class="text-gray-800/60  text-sm">Total Orders</p>
                 <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-purple-400 to-purple-600 rounded-full progress-bar"
                         style="width: 45%;"></div>
@@ -92,9 +92,9 @@
                         Live
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 dark:text-text-white mb-1"
+                <h3 class="text-2xl font-bold text-gray-800  mb-1"
                     x-text="stats.activeUsers.toLocaleString()">847</h3>
-                <p class="text-gray-800/60 dark:text-text-dark-primary text-sm">Active Users</p>
+                <p class="text-gray-800/60  text-sm">Active Users</p>
                 <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full pulse-slow progress-bar"
                         style="width: 85%;"></div>
@@ -111,18 +111,18 @@
             <div class="lg:col-span-2 glass-card rounded-2xl p-6 card-hover">
                 <div class="flex items-center justify-between mb-6">
                     <div>
-                        <h3 class="text-xl font-bold text-text-white mb-1">Revenue Analytics</h3>
+                        <h3 class="text-xl font-bold text-text-primary mb-1">Revenue Analytics</h3>
                         <p class="text-text-dark-primary text-sm">Monthly revenue breakdown</p>
                     </div>
                     <div class="flex items-center gap-2">
                         <select
-                            class="bg-white/10 text-text-white text-sm px-3 py-2 rounded-lg border border-white/20 outline-none">
+                            class="bg-white/10 text-text-primary text-sm px-3 py-2 rounded-lg border border-white/20 outline-none">
                             <option value="monthly">Monthly</option>
                             <option value="weekly">Weekly</option>
                             <option value="daily">Daily</option>
                         </select>
                         <button
-                            class="btn-primary text-text-white text-sm px-4 py-2 rounded-xl flex items-center gap-2">
+                            class="btn-primary text-text-primary text-sm px-4 py-2 rounded-xl flex items-center gap-2">
                             <flux:icon name="arrow-down-tray" class="w-4 h-4" />
                             Export
                         </button>
@@ -138,8 +138,8 @@
                 <!-- Recent Activity -->
                 <div class="glass-card rounded-2xl p-6">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-bold text-text-white">Recent Activity</h3>
-                        <button class="text-text-dark-primary hover:text-text-white transition-colors">
+                        <h3 class="text-lg font-bold text-text-primary">Recent Activity</h3>
+                        <button class="text-text-dark-primary hover:text-text-primary transition-colors">
                             <flux:icon name="move-horizontal" class="w-5 h-5" />
                         </button>
                     </div>
@@ -151,7 +151,7 @@
                                     <flux:icon name="activity" class="w-4 h-4" x-bind:class="activity.iconColor" />
                                 </div>
                                 <div class="flex-1">
-                                    <p class="text-text-white text-sm font-medium" x-text="activity.title"></p>
+                                    <p class="text-text-primary text-sm font-medium" x-text="activity.title"></p>
                                     <p class="text-text-dark-primary text-xs" x-text="activity.time"></p>
                                 </div>
                             </div>
@@ -161,25 +161,25 @@
 
                 <!-- Quick Actions -->
                 <div class="glass-card rounded-2xl p-6">
-                    <h3 class="text-lg font-bold text-text-white mb-4">Quick Actions</h3>
+                    <h3 class="text-lg font-bold text-text-primary mb-4">Quick Actions</h3>
                     <div class="grid grid-cols-2 gap-3">
                         <button
-                            class="btn-primary p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 hover:scale-105 transition-transform">
+                            class="btn-primary p-3 rounded-xl text-text-primary text-sm font-medium flex items-center justify-center gap-2 hover:scale-105 transition-transform">
                             <flux:icon name="user-plus" class="w-4 h-4" />
                             Add User
                         </button>
                         <button
-                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-primary text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
                             <flux:icon name="envelope" class="w-4 h-4" />
                             Send Mail
                         </button>
                         <button
-                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-primary text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
                             <flux:icon name="file-text" class="w-4 h-4" />
                             Reports
                         </button>
                         <button
-                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-primary text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
                             <flux:icon name="cog-8-tooth" class="w-4 h-4" />
                             Settings
                         </button>

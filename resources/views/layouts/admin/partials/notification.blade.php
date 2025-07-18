@@ -6,9 +6,9 @@
     class="hidden fixed right-0 top-0 h-full w-80 glass-card z-50 p-6 overflow-y-auto custom-scrollbar"
     :class="showNotifications ? '!block' : '!hidden'">
     <div class="flex items-center justify-between mb-6">
-        <h3 class="text-xl font-bold text-text-white">Notifications</h3>
+        <h3 class="text-xl font-bold text-text-primary">Notifications</h3>
         <button @click="toggleNotifications()" class="p-2 rounded-lg hover:bg-white/10 transition-colors">
-            <flux:icon name="x-mark" class="w-5 h-5 text-text-white" />
+            <flux:icon name="x-mark" class="w-5 h-5 text-text-primary" />
         </button>
     </div>
     <div class="space-y-4">
@@ -19,9 +19,9 @@
                         <flux:icon name="bell" class="w-4 h-4" x-bind:class="notification.iconColor" />
                     </div>
                     <div class="flex-1">
-                        <p class="text-text-white text-sm font-medium mb-1" x-text="notification.title"></p>
+                        <p class="text-text-primary text-sm font-medium mb-1" x-text="notification.title"></p>
                         <p class="text-text-dark-primary text-xs" x-text="notification.message"></p>
-                        <span class="text-text-white/40 text-xs" x-text="notification.time"></span>
+                        <span class="text-text-primary/40 text-xs" x-text="notification.time"></span>
                     </div>
                 </div>
             </div>

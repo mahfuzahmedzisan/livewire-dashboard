@@ -16,23 +16,6 @@
         {{ config('app.name', 'Dashboard Setup') }}
     </title>
 
-    {{-- Theme selector && Theme store --}}
-    {{-- <script>
-        (function() {
-            let theme = localStorage.getItem('theme') || 'system';
-
-            if (theme === 'system') {
-                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                document.documentElement.classList.toggle('dark', systemPrefersDark);
-                document.documentElement.setAttribute('data-theme', systemPrefersDark ? 'dark' : 'light');
-            } else {
-                document.documentElement.classList.toggle('dark', theme === 'dark');
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-        })();
-    </script>
-    <script src="{{ asset('assets/js/toggle-theme.js') }}"></script> --}}
-
     {{-- BoxIcon  --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 

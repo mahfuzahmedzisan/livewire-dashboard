@@ -116,11 +116,11 @@
             <!-- Single Navlink (like original single-navlink) -->
             @if (empty($permission) || auth()->user()->can($permission))
                 <a href="{{ $route }}" wire:navigate
-                    class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10 text-text-white transition-all duration-200 group {{ $isMainActive ? 'active' : '' }}">
+                    class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-teritary/10 dark:hover:bg-bg-white/10 text-text-primary transition-all duration-200 group {{ $isMainActive ? 'active' : '' }}">
                     <div
-                        class="w-8 h-8 bg-bg-black/10 dark:bg-bg-white/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
+                        class="w-8 h-8 bg-bg-teritary/10 dark:bg-bg-white/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
                         @if ($boxicon)
-                            <i class="{{ $defaultParentIcon }} text-text-black dark:text-text-white"></i>
+                            <i class="{{ $defaultParentIcon }} text-text-primary"></i>
                         @else
                             <flux:icon name="{{ $defaultParentIcon }}"
                                 class="w-5 h-5 text-black dark:text-white flex-shrink-0" />
@@ -141,7 +141,7 @@
                         x-transition:leave="transition-all duration-200"
                         x-transition:leave-start="opacity-100 translate-x-0"
                         x-transition:leave-end="opacity-0 -translate-x-4"
-                        class="font-medium {{ $isMainActive ? 'text-text-black dark:text-text-white' : 'text-text-light-secondary dark:text-text-dark-primary' }}">{{ __($name) }}</span>
+                        class="font-medium {{ $isMainActive ? 'text-text-primary ' : 'text-text-light-secondary ' }}">{{ __($name) }}</span>
                     <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                         class="ml-auto {{ $isMainActive ? 'block' : 'hidden' }}">
                         <div class="w-2 h-2 bg-violet-400 dark:bg-violet-300 rounded-full animate-pulse"></div>
@@ -152,10 +152,10 @@
             <!-- Dropdown Button -->
             <button
                 @click="((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) ? (open = !open) : toggleCollapsedDropdown()"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10 text-text-white transition-all duration-200 group w-full {{ $isAnyActive ? 'active' : '' }}">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-teritary/10 dark:hover:bg-bg-white/10 text-text-primary transition-all duration-200 group w-full {{ $isAnyActive ? 'active' : '' }}">
                 {{-- relative --}}
                 <div
-                    class="w-8 h-8 bg-bg-black/10 dark:bg-bg-white/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
+                    class="w-8 h-8 bg-bg-teritary/10 dark:bg-bg-white/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
                     @if ($boxicon)
                         <i class="{{ $defaultParentIcon }} text-blue"></i>
                     @else
@@ -179,7 +179,7 @@
                     x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition-all duration-200"
                     x-transition:leave-start="opacity-100 translate-x-0"
                     x-transition:leave-end="opacity-0 -translate-x-4"
-                    class="font-medium text-left {{ $isAnyActive ? 'text-text-black dark:text-text-white' : 'text-text-light-secondary dark:text-text-dark-primary' }}">{{ __($name) }}</span>
+                    class="font-medium text-left {{ $isAnyActive ? 'text-text-primary ' : 'text-text-light-secondary ' }}">{{ __($name) }}</span>
 
                 <!-- Dropdown Arrow for expanded state -->
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
@@ -431,7 +431,7 @@
                     @if (isset($item['type']) && $item['type'] === 'single')
                         <!-- Single Navigation Item -->
                         <a href="{{ empty($item['route']) ? 'javascript:void(0);' : $item['route'] }}" wire:navigate
-                            class="sidebar-item flex items-center gap-4 p-2 rounded-lg hover:bg-bg-black/5 dark:hover:bg-bg-white/5 text-text-white transition-all duration-200 group {{ isset($item['active']) && $page_slug == $item['active'] ? 'bg-violet-50 dark:bg-violet-900/20' : '' }}">
+                            class="sidebar-item flex items-center gap-4 p-2 rounded-lg hover:bg-bg-black/5 dark:hover:bg-bg-white/5 text-text-primary transition-all duration-200 group {{ isset($item['active']) && $page_slug == $item['active'] ? 'bg-violet-50 dark:bg-violet-900/20' : '' }}">
                             <div
                                 class="w-6 h-6 bg-bg-black/5 dark:bg-bg-white/5 rounded-md flex items-center justify-center group-hover:scale-110 transition-transform">
                                 @if ($subitemBoxicon)
@@ -441,7 +441,7 @@
                                 @endif
                             </div>
                             <span
-                                class="font-medium text-sm  text-left {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-light-secondary dark:text-text-dark-primary' }}">{{ __($item['name']) }}</span>
+                                class="font-medium text-sm  text-left {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-light-secondary ' }}">{{ __($item['name']) }}</span>
                         </a>
                     @elseif (isset($item['subitems']) && count($item['subitems']) > 0)
                         <!-- Multi-dropdown item -->
@@ -456,7 +456,7 @@
                             })() }}
                         }">
                             <button @click="subOpen = !subOpen"
-                                class="flex items-center gap-3 p-2 rounded-lg hover:bg-bg-black/5 dark:hover:bg-bg-white/5 text-text-light-secondary dark:text-text-dark-primary transition-all duration-200 w-full group">
+                                class="flex items-center gap-3 p-2 rounded-lg hover:bg-bg-black/5 dark:hover:bg-bg-white/5 text-text-light-secondary  transition-all duration-200 w-full group">
                                 <div
                                     class="w-6 h-6 bg-bg-black/5 dark:bg-bg-white/5 rounded-md flex items-center justify-center group-hover:scale-110 transition-transform">
                                     @if ($subitemBoxicon)
@@ -497,7 +497,7 @@
                                             @endif
                                         </div>
                                         <span
-                                            class="font-medium text-xs {{ isset($subitem['active']) && $page_slug == $subitem['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-light-secondary dark:text-text-dark-primary' }}">{{ __($subitem['name']) }}</span>
+                                            class="font-medium text-xs {{ isset($subitem['active']) && $page_slug == $subitem['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-light-secondary ' }}">{{ __($subitem['name']) }}</span>
                                         @if (isset($subitem['active']) && $page_slug == $subitem['active'])
                                             <div class="ml-auto">
                                                 <div
@@ -522,7 +522,7 @@
                                 @endif
                             </div>
                             <span
-                                class="font-medium text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-light-secondary dark:text-text-dark-primary' }}">{{ __($item['name']) }}</span>
+                                class="font-medium text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-light-secondary ' }}">{{ __($item['name']) }}</span>
                             @if (isset($item['active']) && $page_slug == $item['active'])
                                 <div class="ml-auto">
                                     <div
