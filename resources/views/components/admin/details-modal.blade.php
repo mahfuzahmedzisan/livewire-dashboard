@@ -15,7 +15,8 @@
             <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
-                        <i data-lucide="layout-list" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                        <flux:icon name="queue-list" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        {{-- <i data-lucide="layout-list" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i> --}}
                     </div>
                     <div>
                         <h3 id="modal-title" class="text-xl font-bold text-gray-900 dark:text-white">
@@ -27,7 +28,7 @@
 
                 <button onclick="closeDetailsModal()"
                     class="p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200">
-                    <i data-lucide="x" class="w-6 h-6"></i>
+                    <flux:icon name="x-mark" class="w-5 h-5" />
                 </button>
             </div>
 
@@ -47,14 +48,14 @@
                 <div id="error-state" class="hidden text-center py-12">
                     <div
                         class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="alert-circle" class="w-8 h-8 text-red-500"></i>
+                        <flux:icon name="circle-alert" class="w-8 h-8 text-red-500" />
                     </div>
                     <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{{ __('Failed to Load') }}</h4>
                     <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
                         {{ __('Unable to fetch details. Please try again.') }}</p>
                     <button onclick="retryLoadDetails()"
                         class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors">
-                        <i data-lucide="refresh-cw" class="w-4 h-4 inline mr-2"></i>
+                        <flux:icon name="arrow-path" class="w-4 h-4 inline mr-2" />
                         {{ __('Retry') }}
                     </button>
                 </div>

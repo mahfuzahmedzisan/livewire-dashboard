@@ -28,8 +28,7 @@
                 this.searchResults = []; // Clear search results if the input is too short
             }
         }
-    }" x-init="init()"
-        x-on:click.away="tablet && (searchbar_show = false)">
+    }" x-init="init()" x-on:click.away="tablet && (searchbar_show = false)">
         <div class="relative w-full">
             <!-- Search bar with smooth transitions -->
             <div class="join !w-full" x-show="!tablet || searchbar_show"
@@ -50,8 +49,9 @@
                 <button type="submit"
                     class="btn join-item rounded-r-full border-border-light-tertiary dark:border-border-dark-tertiary bg-bg-light-primary dark:bg-bg-dark-primary hover:bg-bg-light-secondary dark:hover:bg-bg-dark-secondary focus:outline-none pl-2 group"
                     :class="focus ? '!border-border-active bg-bg-light-secondary dark:bg-bg-dark-secondary' : ''">
-                    <i data-lucide="search" class="group-hover:text-text-active transition-all duration-200 ease-in-out"
-                        :class="focus ? 'animate-scalePulse' : ''"></i>
+                    <flux:icon name="magnifying-glass"
+                        class="group-hover:text-text-active transition-all duration-200 ease-in-out"
+                        x-bind:class="focus ? 'animate-scalePulse' : ''" />
                 </button>
             </div>
 
@@ -62,9 +62,9 @@
                     '!border-border-active bg-bg-light-secondary dark:bg-bg-dark-secondary': focus,
                     'opacity-0 invisible': searchbar_show
                 }">
-                <i data-lucide="search" class="group-hover:text-text-active transition-all duration-200 ease-in-out"
-                    :class="focus ? 'animate-scalePulse' : ''"></i>
-                    
+                <flux:icon name="magnifying-glass" class="group-hover:text-text-active transition-all duration-200 ease-in-out"
+                    x-bind:class="focus ? 'animate-scalePulse' : ''" />
+
             </button>
 
             <!-- Search Results Dropdown with smooth transition -->
@@ -103,7 +103,8 @@
                         </ul>
 
                         <!-- No results message -->
-                        <div x-show="searchResults.length === 0" class="text-sm text-text-light-muted dark:text-text-dark-muted mt-2">
+                        <div x-show="searchResults.length === 0"
+                            class="text-sm text-text-light-muted dark:text-text-dark-muted mt-2">
                             {{ __('No results found.') }}
                         </div>
                     </div>

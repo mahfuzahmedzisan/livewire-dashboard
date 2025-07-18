@@ -14,7 +14,7 @@
             <div class="flex items-center gap-4">
                 <div
                     class="w-10 h-10 glass-card shadow inset-shadow-lg bg-bg-white dark:bg-bg-black p-0 rounded-xl flex items-center justify-center">
-                    <i data-lucide="zap" class="!w-4 !h-4"></i>
+                    <flux:icon name="bolt" class="!w-4 !h-4" />
                 </div>
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                     x-transition:enter="transition-all duration-300 delay-75"
@@ -44,13 +44,13 @@
                     [
                         'name' => 'Admin',
                         'route' => '#',
-                        'icon' => 'user',
+                        'icon' => 'user-circle',
                         'active' => 'admin',
                     ],
                     [
                         'name' => 'Role',
                         'route' => '#',
-                        'icon' => 'shield',
+                        'icon' => 'shield-exclamation',
                         'active' => 'role',
                     ],
                     [
@@ -68,20 +68,36 @@
                         'route' => '#',
                         'icon' => 'user',
                         'active' => 'admin-users',
-                        'permission' => 'user-list',
                     ],
                     [
                         'name' => 'Top Reposters',
                         'route' => '#',
                         'icon' => 'user',
                         'active' => 'admin-users',
-                        'permission' => 'user-list',
                     ],
                     [
                         'name' => 'Banned Users',
                         'route' => '#',
                         'icon' => 'user',
                         'active' => 'admin-users',
+                    ],
+                    [
+                        'name' => 'Multi Dropdown',
+                        'icon' => 'user',
+                        'subitems' => [
+                            [
+                                'name' => 'Subitem 1',
+                                'route' => '#',
+                                'icon' => 'user',
+                                'active' => 'admin-users',
+                            ],
+                            [
+                                'name' => 'Subitem 2',
+                                'route' => '#',
+                                'icon' => 'user',
+                                'active' => 'admin-users',
+                            ],
+                        ],
                     ],
                 ]" />
 

@@ -15,7 +15,7 @@
     class="input flex items-center gap-1 px-0 focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-active focus-within:border-border-active w-full"
     @if ($type === 'password' || $type === 'password_confirmation') x-data="{ showPassword: false }" @endif>
     @if ($icon)
-        <i data-lucide="{{ $icon }}" class="h-[1em] opacity-50 ml-2 mr-1"></i>
+        <flux:icon name="{{ $icon }}" class="h-[1em] opacity-50 ml-2 mr-1" />
     @endif
 
     @if ($type === 'password' || $type === 'password_confirmation')
@@ -32,8 +32,9 @@
 
     @if ($type === 'password' || $type === 'password_confirmation')
         <button type="button" class="mr-2 ml-1 focus:outline-none"
-            @click="showPassword = !showPassword; $nextTick(() => lucide.createIcons())">
-            <i :data-lucide="showPassword ? 'eye-off' : 'eye'" class="w-4 h-4 opacity-50"></i>
+            @click="showPassword = !showPassword;">
+            <flux:icon :name="showPassword ? 'eye' : 'eye-off'" class="w-4 h-4 opacity-50" />
+            {{-- <i :data-lucide="showPassword ? 'eye-off' : 'eye'" class="w-4 h-4 opacity-50"></i> --}}
         </button>
     @endif
 </label>

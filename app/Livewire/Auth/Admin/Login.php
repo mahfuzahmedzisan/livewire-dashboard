@@ -32,7 +32,7 @@ class Login extends Component
 
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
+        if (! Auth::guard('admin')->attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
@@ -43,11 +43,7 @@ class Login extends Component
         RateLimiter::clear($this->throttleKey());
         Session::regenerate();
 
-        if (Auth::user()->is_admin) {
-            $this->redirectIntended(default: route('admin.dashboard', absolute: false), navigate: true);
-        } else {
-            $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
-        }
+        $this->redirectIntended(default: route('admin.dashboard', absolute: false), navigate: true);
     }
 
     /**

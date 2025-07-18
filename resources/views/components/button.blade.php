@@ -98,7 +98,7 @@
                     @if ($loading)
                         <span class="loading loading-spinner mr-1"></span>
                     @elseif (!empty($icon))
-                        <i data-lucide="{{ $icon }}" class="w-4 h-4 mr-1"></i>
+                        <flux:icon name="{{ $icon }}" class="w-4 h-4 mr-1" />
                     @endif
                 @endif
                 {{ $slot }}
@@ -106,18 +106,18 @@
                     @if ($loading)
                         <span class="loading loading-spinner ml-1"></span>
                     @elseif (!empty($icon))
-                        <i data-lucide="{{ $icon }}" class="w-4 h-4 ml-1"></i>
+                        <flux:icon name="{{ $icon }}" class="w-4 h-4 mr-1" />
                     @endif
                 @endif
             </button>
         @else
-            <a {{ $disabled ? 'disabled' : '' }} href="{{ $href }}" target="{{ $target }}"
+            <a {{ $disabled ? 'disabled' : '' }} href="{{ $href }}" target="{{ $target }}" wire:navigate
                 {{ $mergedAttributes }}>
                 @if ($icon_position === 'left')
                     @if ($loading)
                         <span class="loading loading-spinner mr-1"></span>
                     @elseif (!empty($icon))
-                        <i data-lucide="{{ $icon }}" class="w-4 h-4 mr-1"></i>
+                        <flux:icon name="{{ $icon }}" class="w-4 h-4 mr-1" />
                     @endif
                 @endif
                 {{ $slot }}
@@ -125,7 +125,7 @@
                     @if ($loading)
                         <span class="loading loading-spinner ml-1"></span>
                     @elseif (!empty($icon))
-                        <i data-lucide="{{ $icon }}" class="w-4 h-4 ml-1"></i>
+                        <flux:icon name="{{ $icon }}" class="w-4 h-4 mr-1" />
                     @endif
                 @endif
             </a>
@@ -138,7 +138,7 @@
                 @if ($loading)
                     <span class="loading loading-spinner mr-1"></span>
                 @elseif (!empty($icon))
-                    <i data-lucide="{{ $icon }}" class="w-4 h-4 mr-1"></i>
+                    <flux:icon name="{{ $icon }}" class="w-4 h-4 mr-1" />
                 @endif
             @endif
             {{ $slot }}
@@ -146,18 +146,18 @@
                 @if ($loading)
                     <span class="loading loading-spinner ml-1"></span>
                 @elseif (!empty($icon))
-                    <i data-lucide="{{ $icon }}" class="w-4 h-4 ml-1"></i>
+                    <flux:icon name="{{ $icon }}" class="w-4 h-4 mr-1" />
                 @endif
             @endif
         </button>
     @else
-        <a {{ $disabled ? 'disabled' : '' }} href="{{ $href }}" target="{{ $target }}"
+        <a {{ $disabled ? 'disabled' : '' }} href="{{ $href }}" target="{{ $target }}" wire:navigate
             {{ $mergedAttributes }}>
             @if ($icon_position === 'left')
                 @if ($loading)
                     <span class="loading loading-spinner mr-1"></span>
                 @elseif (!empty($icon))
-                    <i data-lucide="{{ $icon }}" class="w-4 h-4 mr-1"></i>
+                    <flux:icon name="{{ $icon }}" class="w-4 h-4 mr-1" />
                 @endif
             @endif
             {{ $slot }}
@@ -165,7 +165,7 @@
                 @if ($loading)
                     <span class="loading loading-spinner ml-1"></span>
                 @elseif (!empty($icon))
-                    <i data-lucide="{{ $icon }}" class="w-4 h-4 ml-1"></i>
+                    <flux:icon name="{{ $icon }}" class="w-4 h-4 mr-1" />
                 @endif
             @endif
         </a>

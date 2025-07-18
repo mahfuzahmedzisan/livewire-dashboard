@@ -116,6 +116,3 @@
     </div>
 </div>
 
-<script>
-    lucide.createIcons();
-</script>

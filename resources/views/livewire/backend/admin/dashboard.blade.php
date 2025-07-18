@@ -10,6 +10,10 @@
             </div>
         </div>
 
+        <div class="glass-card rounded-2xl p-6 mb-8">
+            <x-button icon="user"> ljsdlkfjlkdf</x-button>
+        </div>
+
         <!-- Stats Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"
             x-transition:enter="transition-all duration-500" x-transition:enter-start="opacity-0 translate-y-8"
@@ -19,10 +23,10 @@
                 @click="showDetails('users')">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
-                        <i data-lucide="users" class="w-6 h-6 text-blue-400"></i>
+                        <flux:icon name="users" class="w-6 h-6 text-blue-400" />
                     </div>
                     <div class="text-green-400 text-sm font-medium flex items-center gap-1">
-                        <i data-lucide="trending-up" class="w-3 h-3"></i>
+                        <flux:icon name="arrow-trending-up" class="w-3 h-3" />
                         +12%
                     </div>
                 </div>
@@ -40,10 +44,10 @@
                 @click="showDetails('revenue')">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
-                        <i data-lucide="trending-up" class="w-6 h-6 text-green-400"></i>
+                        <flux:icon name="banknotes" class="w-6 h-6 text-green-400" />
                     </div>
                     <div class="text-green-400 text-sm font-medium flex items-center gap-1">
-                        <i data-lucide="trending-up" class="w-3 h-3"></i>
+                        <flux:icon name="arrow-trending-up" class="w-3 h-3" />
                         +23%
                     </div>
                 </div>
@@ -60,10 +64,10 @@
                 @click="showDetails('orders')">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
-                        <i data-lucide="shopping-bag" class="w-6 h-6 text-purple-400"></i>
+                        <flux:icon name="shopping-bag" class="w-6 h-6 text-purple-400" />
                     </div>
                     <div class="text-red-400 text-sm font-medium flex items-center gap-1">
-                        <i data-lucide="trending-down" class="w-3 h-3"></i>
+                        <flux:icon name="arrow-trending-down" class="w-3 h-3" />
                         -5%
                     </div>
                 </div>
@@ -81,7 +85,7 @@
                 @click="showDetails('active')">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center">
-                        <i data-lucide="activity" class="w-6 h-6 text-yellow-400"></i>
+                        <flux:icon name="activity" class="w-6 h-6 text-yellow-400" />
                     </div>
                     <div class="text-yellow-400 text-sm font-medium flex items-center gap-1">
                         <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
@@ -99,7 +103,8 @@
         </div>
 
         <!-- Charts Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-5" x-transition:enter="transition-all duration-500 delay-200"
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-5"
+            x-transition:enter="transition-all duration-500 delay-200"
             x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
 
             <!-- Main Chart -->
@@ -118,7 +123,7 @@
                         </select>
                         <button
                             class="btn-primary text-text-white text-sm px-4 py-2 rounded-xl flex items-center gap-2">
-                            <i data-lucide="download" class="w-4 h-4"></i>
+                            <flux:icon name="arrow-down-tray" class="w-4 h-4" />
                             Export
                         </button>
                     </div>
@@ -135,7 +140,7 @@
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-lg font-bold text-text-white">Recent Activity</h3>
                         <button class="text-text-dark-primary hover:text-text-white transition-colors">
-                            <i data-lucide="more-horizontal" class="w-5 h-5"></i>
+                            <flux:icon name="move-horizontal" class="w-5 h-5" />
                         </button>
                     </div>
                     <div class="space-y-4">
@@ -143,7 +148,7 @@
                             <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors">
                                 <div class="w-8 h-8 rounded-lg flex items-center justify-center"
                                     :class="activity.iconBg">
-                                    <i :data-lucide="activity.icon" class="w-4 h-4" :class="activity.iconColor"></i>
+                                    <flux:icon name="activity" class="w-4 h-4" x-bind:class="activity.iconColor" />
                                 </div>
                                 <div class="flex-1">
                                     <p class="text-text-white text-sm font-medium" x-text="activity.title"></p>
@@ -160,22 +165,22 @@
                     <div class="grid grid-cols-2 gap-3">
                         <button
                             class="btn-primary p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 hover:scale-105 transition-transform">
-                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            <flux:icon name="user-plus" class="w-4 h-4" />
                             Add User
                         </button>
                         <button
                             class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <flux:icon name="envelope" class="w-4 h-4" />
                             Send Mail
                         </button>
                         <button
                             class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
-                            <i data-lucide="file-text" class="w-4 h-4"></i>
+                            <flux:icon name="file-text" class="w-4 h-4" />
                             Reports
                         </button>
                         <button
                             class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
-                            <i data-lucide="settings" class="w-4 h-4"></i>
+                            <flux:icon name="cog-8-tooth" class="w-4 h-4" />
                             Settings
                         </button>
                     </div>

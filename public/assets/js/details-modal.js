@@ -146,7 +146,7 @@ class DynamicDetailsModal {
             this.loadingStateElement.classList.add('hidden');
             this.contentElement.classList.remove('hidden');
 
-            this._refreshIcons();
+            // this._refreshIcons();
         } catch (error) {
             console.error('Error rendering details:', error);
             this._showErrorState();
@@ -217,7 +217,7 @@ class DynamicDetailsModal {
         this.loadingStateElement.classList.add('hidden');
         this.contentElement.classList.add('hidden');
         this.errorStateElement.classList.remove('hidden');
-        this._refreshIcons();
+        // this._refreshIcons();
     }
 
     /**
@@ -291,7 +291,7 @@ class DynamicDetailsModal {
             </div>`;
         document.body.insertAdjacentHTML('beforeend', lightboxHtml);
         document.body.style.overflow = 'hidden'; // Ensure scroll is disabled
-        this._refreshIcons();
+        // this._refreshIcons();
     }
 
     /**
@@ -309,7 +309,7 @@ class DynamicDetailsModal {
             </div>`;
         document.body.insertAdjacentHTML('beforeend', lightboxHtml);
         document.body.style.overflow = 'hidden'; // Ensure scroll is disabled
-        this._refreshIcons();
+        // this._refreshIcons();
     }
 
     /**
@@ -331,11 +331,11 @@ class DynamicDetailsModal {
      * Re-initializes Lucide icons if the library is available.
      * @private
      */
-    _refreshIcons() {
-        if (typeof lucide !== 'undefined' && lucide.createIcons) {
-            lucide.createIcons();
-        }
-    }
+    // _refreshIcons() {
+    //     if (typeof lucide !== 'undefined' && lucide.createIcons) {
+    //         lucide.createIcons();
+    //     }
+    // }
 }
 
 

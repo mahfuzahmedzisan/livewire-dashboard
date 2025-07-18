@@ -12,8 +12,6 @@ document.addEventListener('alpine:init', () => {
             const isDark = this.current === 'dark';
             document.documentElement.classList.toggle('dark', isDark);
             document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-
-            if (window.lucide) lucide.createIcons();  // Optional, to refresh icons
         },
 
         toggleTheme() {

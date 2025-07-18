@@ -7,7 +7,10 @@
                     class="p-2 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10 dark:text-text-white text-text-light-primary transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 group"
                     :aria-label="desktop ? (sidebar_expanded ? 'Collapse sidebar' : 'Expand sidebar') : (mobile_menu_open ?
                         'Close menu' : 'Open menu')">
-                    <i data-lucide="menu" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                    <flux:icon name="bars-4" x-show="!sidebar_expanded && !mobile_menu_open"
+                        class="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    <flux:icon name="bars-3" x-show="sidebar_expanded && !mobile_menu_open"
+                        class="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </button>
 
                 <div class="hidden sm:block">
@@ -30,10 +33,10 @@
                     class="p-2 rounded-xl hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
                     data-tooltip="Toggle theme"
                     :title="$store.theme.current.charAt(0).toUpperCase() + $store.theme.current.slice(1) + ' mode'">
-                    <i data-lucide="sun" x-show="!$store.theme.darkMode"
-                        class="w-5 h-5 text-text-light-primary dark:text-text-white"></i>
-                    <i data-lucide="moon" x-show="$store.theme.darkMode"
-                        class="w-5 h-5 text-text-light-primary dark:text-text-white"></i>
+                    <flux:icon name="sun" x-show="!$store.theme.darkMode"
+                        class="w-5 h-5 text-text-light-primary dark:text-text-white" />
+                    <flux:icon name="moon" x-show="$store.theme.darkMode"
+                        class="w-5 h-5 text-text-light-primary dark:text-text-white" />
                 </button>
 
 
@@ -41,7 +44,7 @@
                 <!-- Notifications -->
                 <button @click="toggleNotifications()"
                     class="relative p-2 rounded-xl hover:bg-bg-black/10 dark:hover:bg-bg-white/10 transition-colors">
-                    <i data-lucide="bell" class="w-5 h-5 text-text-light-primary dark:text-text-white"></i>
+                    <flux:icon name="bell" class="w-5 h-5 text-text-light-primary dark:text-text-white" />
                     <div x-show="notifications.length > 0"
                         class="absolute top-1 right-1 w-2 h-2 bg-red-400 rounded-full notification-badge">
                     </div>
@@ -90,7 +93,7 @@
         <div class="px-4 lg:px-6 pb-4">
             <nav class="flex items-center gap-2 text-sm text-text-light-primary/60 dark:text-text-dark-primary">
                 <a href="{{ route('dashboard') }}">{{ __('Admin Dashboard') }}</a>
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                <flux:icon name="chevron-right" class="w-4 h-4" />
                 <span class="text-text-light-primary dark:text-text-white capitalize"> {{ $breadcrumb }}</span>
             </nav>
         </div>

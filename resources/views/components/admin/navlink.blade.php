@@ -122,8 +122,8 @@
                         @if ($boxicon)
                             <i class="{{ $defaultParentIcon }} text-text-black dark:text-text-white"></i>
                         @else
-                            <i data-lucide="{{ $defaultParentIcon }}"
-                                class="w-5 h-5 stroke-bg-black dark:stroke-bg-white flex-shrink-0"></i>
+                            <flux:icon name="{{ $defaultParentIcon }}"
+                                class="w-5 h-5 text-black dark:text-white flex-shrink-0" />
                         @endif
                         <!-- Active indicator for collapsed state -->
                         <div x-show="!((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) && {{ $isAnyActive ? 'true' : 'false' }}"
@@ -159,8 +159,8 @@
                     @if ($boxicon)
                         <i class="{{ $defaultParentIcon }} text-blue"></i>
                     @else
-                        <i data-lucide="{{ $defaultParentIcon }}"
-                            class="w-5 h-5 stroke-bg-black dark:stroke-bg-white flex-shrink-0"></i>
+                        <flux:icon name="{{ $defaultParentIcon }}"
+                            class="w-5 h-5 text-black dark:text-white flex-shrink-0" />
                     @endif
 
                     <!-- Active indicator for collapsed state -->
@@ -184,7 +184,7 @@
                 <!-- Dropdown Arrow for expanded state -->
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                     class="ml-auto transition-transform duration-200" :class="open ? 'rotate-180' : ''">
-                    <i data-lucide="chevron-down" class="w-4 h-4 stroke-bg-black dark:stroke-bg-white"></i>
+                    <flux:icon name="chevron-down" class="w-5 h-5 text-black dark:text-white flex-shrink-0" />
                 </div>
             </button>
         @endif
@@ -254,8 +254,8 @@
                             @if ($boxicon)
                                 <i class="{{ $defaultParentIcon }} text-violet-600 dark:text-violet-400"></i>
                             @else
-                                <i data-lucide="{{ $defaultParentIcon }}"
-                                    class="w-5 h-5 stroke-violet-600 dark:stroke-violet-400"></i>
+                                <flux:icon name="{{ $defaultParentIcon }}"
+                                    class="w-5 h-5 text-black dark:text-white flex-shrink-0" />
                             @endif
                         </div>
                         <div>
@@ -284,8 +284,9 @@
                                         <i
                                             class="{{ $subitemIcon }} text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-gray-600 dark:text-gray-400' }}"></i>
                                     @else
-                                        <i data-lucide="{{ $subitemIcon }}"
-                                            class="w-4 h-4 {{ isset($item['active']) && $page_slug == $item['active'] ? 'stroke-violet-600 dark:stroke-violet-400' : 'stroke-gray-600 dark:stroke-gray-400' }}"></i>
+                                        <flux:icon name="{{ $subitemIcon }}"
+                                            class="w-5 h-5 text-black dark:text-white flex-shrink-0"
+                                            class="w-4 h-4 {{ isset($item['active']) && $page_slug == $item['active'] ? 'stroke-violet-600 dark:stroke-violet-400' : 'stroke-gray-600 dark:stroke-gray-400' }}" />
                                     @endif
                                 </div>
                                 <div class="flex-1">
@@ -316,15 +317,15 @@
                                             <i
                                                 class="{{ $subitemIcon }} text-sm text-gray-600 dark:text-gray-400"></i>
                                         @else
-                                            <i data-lucide="{{ $subitemIcon }}"
-                                                class="w-4 h-4 stroke-gray-600 dark:stroke-gray-400"></i>
+                                            <flux:icon name="{{ $subitemIcon }}"
+                                                class="w-4 h-4 text-black dark:text-white flex-shrink-0" />
                                         @endif
                                     </div>
                                     <span
                                         class="font-medium text-sm text-gray-700 dark:text-gray-300 flex-1 text-left">{{ __($item['name']) }}</span>
                                     <div class="transition-transform duration-200" :class="subOpen ? 'rotate-180' : ''">
-                                        <i data-lucide="chevron-down"
-                                            class="w-4 h-4 stroke-gray-500 dark:stroke-gray-400"></i>
+                                        <flux:icon name="chevron-down"
+                                            class="w-4 h-4 stroke-gray-500 dark:stroke-gray-400" />
                                     </div>
                                     @if (
                                         (function () use ($item, $page_slug) {
@@ -363,8 +364,8 @@
                                                     <i
                                                         class="{{ $multiSubitemIcon }} text-xs {{ isset($subitem['active']) && $page_slug == $subitem['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-gray-500 dark:text-gray-500' }}"></i>
                                                 @else
-                                                    <i data-lucide="{{ $multiSubitemIcon }}"
-                                                        class="w-3 h-3 {{ isset($subitem['active']) && $page_slug == $subitem['active'] ? 'stroke-violet-600 dark:stroke-violet-400' : 'stroke-gray-500 dark:stroke-gray-500' }}"></i>
+                                                    <flux:icon name="{{ $multiSubitemIcon }}"
+                                                        class="w-3 h-3 {{ isset($subitem['active']) && $page_slug == $subitem['active'] ? 'stroke-violet-600 dark:stroke-violet-400' : 'stroke-gray-500 dark:stroke-gray-500' }}" />
                                                 @endif
                                             </div>
                                             <span
@@ -390,8 +391,8 @@
                                         <i
                                             class="{{ $subitemIcon }} text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-gray-600 dark:text-gray-400' }}"></i>
                                     @else
-                                        <i data-lucide="{{ $subitemIcon }}"
-                                            class="w-4 h-4 {{ isset($item['active']) && $page_slug == $item['active'] ? 'stroke-violet-600 dark:stroke-violet-400' : 'stroke-gray-600 dark:stroke-gray-400' }}"></i>
+                                        <flux:icon name="{{ $subitemIcon }}"
+                                            class="w-4 h-4 {{ isset($item['active']) && $page_slug == $item['active'] ? 'stroke-violet-600 dark:stroke-violet-400' : 'stroke-gray-600 dark:stroke-gray-400' }}" />
                                     @endif
                                 </div>
                                 <div class="flex-1">
@@ -436,7 +437,7 @@
                                 @if ($subitemBoxicon)
                                     <i class="{{ $subitemIcon }} text-xs"></i>
                                 @else
-                                    <i data-lucide="{{ $subitemIcon }}" class="w-3 h-3 stroke-current"></i>
+                                    <flux:icon name="{{ $subitemIcon }}" class="w-3 h-3 stroke-current" />
                                 @endif
                             </div>
                             <span
@@ -461,12 +462,12 @@
                                     @if ($subitemBoxicon)
                                         <i class="{{ $subitemIcon }} text-xs"></i>
                                     @else
-                                        <i data-lucide="{{ $subitemIcon }}" class="w-3 h-3 stroke-current"></i>
+                                        <flux:icon name="{{ $subitemIcon }}" class="w-3 h-3 stroke-current" />
                                     @endif
                                 </div>
                                 <span class="font-medium text-sm flex-1 text-left">{{ __($item['name']) }}</span>
                                 <div class="transition-transform duration-200" :class="subOpen ? 'rotate-180' : ''">
-                                    <i data-lucide="chevron-down" class="w-3 h-3 stroke-current"></i>
+                                    <flux:icon name="chevron-down" class="w-3 h-3 stroke-current" />
                                 </div>
                             </button>
 
@@ -491,8 +492,8 @@
                                             @if ($multiSubitemBoxicon)
                                                 <i class="{{ $multiSubitemIcon }} text-xs"></i>
                                             @else
-                                                <i data-lucide="{{ $multiSubitemIcon }}"
-                                                    class="w-2.5 h-2.5 stroke-current"></i>
+                                                <flux:icon name="{{ $multiSubitemIcon }}"
+                                                    class="w-2.5 h-2.5 stroke-current" />
                                             @endif
                                         </div>
                                         <span
@@ -517,7 +518,7 @@
                                 @if ($subitemBoxicon)
                                     <i class="{{ $subitemIcon }} text-xs"></i>
                                 @else
-                                    <i data-lucide="{{ $subitemIcon }}" class="w-3 h-3 stroke-current"></i>
+                                    <flux:icon name="{{ $subitemIcon }}" class="w-3 h-3 stroke-current" />
                                 @endif
                             </div>
                             <span

@@ -4,17 +4,6 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Frontend\Home as FrontendHome;
-
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
-
-Route::get('/',  FrontendHome::class)->name('home');
-
-// Route::view('dashboard', 'dashboard')
-//     ->middleware(['auth', 'verified'])
-//     ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');

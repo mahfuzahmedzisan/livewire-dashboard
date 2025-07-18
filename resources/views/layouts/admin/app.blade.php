@@ -96,7 +96,6 @@
     <!-- Notification Panel -->
     <x-admin::notification />
 
-    <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
     <script>
         function dashboardData() {
             return {
@@ -463,13 +462,6 @@
                 }
             }
         }
-
-        // Initialize Lucide icons after DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-            // }
-        });
 
         // Smooth scrolling for anchor links
         document.addEventListener('click', function(e) {

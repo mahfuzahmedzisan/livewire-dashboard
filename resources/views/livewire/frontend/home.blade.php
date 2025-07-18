@@ -9,23 +9,23 @@
             <flux:heading size="xl">Authentication Area</flux:heading>
             <p class="text-zinc-700 dark:text-zinc-300">Please log in or register to continue.</p>
             <flux:button.group class="mt-4 justify-center">
-                @if (auth()->check())
-                    {{-- @if (auth()->user()->isAdminUser())
-                        <flux:button wire:navigate href="{{ route('admin.dashboard') }}" variant="primary"
-                            color="violet">
-                            Admin
-                            Dashboard
-                        </flux:button>
-                    @else --}}
-                        <flux:button wire:navigate href="{{ route('dashboard') }}" variant="primary" color="emerald">
-                            User Dashboard
-                        </flux:button>
-                    {{-- @endif --}}
+
+                @auth('web')
+                    <flux:button wire:navigate href="{{ route('dashboard') }}" variant="primary" color="emerald">
+                        User Dashboard
+                    </flux:button>
                 @else
                     <flux:button wire:navigate href="{{ route('login') }}" variant="primary">Login</flux:button>
                     <flux:button wire:navigate href="{{ route('register') }}">Register</flux:button>
-                    <flux:button wire:navigate href="{{ route('login') }}" variant="danger">Admin Login</flux:button>
-                @endif
+                @endauth
+                @auth('admin')
+                    <flux:button wire:navigate href="{{ route('admin.dashboard') }}" variant="primary" color="violet">
+                        Admin
+                        Dashboard
+                    </flux:button>
+                @else
+                    <flux:button wire:navigate href="{{ route('admin.login') }}" variant="danger">Admin Login</flux:button>
+                @endauth              
             </flux:button.group>
         </div>
     </div>
