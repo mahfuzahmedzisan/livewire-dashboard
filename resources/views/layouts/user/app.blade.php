@@ -76,13 +76,13 @@
     <div class="flex h-screen">
         <!-- Sidebar -->
 
-        <x-admin::side-bar :active="$page_slug" />
+        <x-user::side-bar :active="$page_slug" />
 
         <!-- Main Content -->
         <div class="flex-1 flex flex-col custom-scrollbar overflow-y-auto">
             <!-- Header -->
 
-            <x-admin::header :breadcrumb="$breadcrumb" />
+            <x-user::header :breadcrumb="$breadcrumb" />
 
             <!-- Main Content Area -->
             <main class="flex-1 p-4 lg:p-6">
@@ -94,7 +94,7 @@
     </div>
 
     <!-- Notification Panel -->
-    <x-admin::notification />
+    <x-user::notification />
 
     <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
     <script>
@@ -544,6 +544,7 @@
     </script>
     {{-- Custom JS --}}
     <script src="{{ asset('assets/js/password.js') }}"></script>
+    @livewireScripts()
     @fluxScripts()
     @stack('js')
 

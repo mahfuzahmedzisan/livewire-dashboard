@@ -21,6 +21,6 @@ class Footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.backend.user.layouts.footer');
+        return view('layouts.user.partials.footer');
     }
 }
