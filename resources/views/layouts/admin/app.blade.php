@@ -154,127 +154,6 @@
                     }
                 ],
 
-                projects: [{
-                        id: 1,
-                        name: 'Website Redesign',
-                        description: 'Complete overhaul of company website with modern design',
-                        progress: 75,
-                        status: 'active',
-                        deadline: 'Dec 31, 2024',
-                        team: '5',
-                        icon: 'globe',
-                        iconBg: 'bg-blue-500/20',
-                        iconColor: 'text-blue-400'
-                    },
-                    {
-                        id: 2,
-                        name: 'Mobile App',
-                        description: 'Native iOS and Android application development',
-                        progress: 45,
-                        status: 'active',
-                        deadline: 'Feb 15, 2025',
-                        team: '8',
-                        icon: 'smartphone',
-                        iconBg: 'bg-green-500/20',
-                        iconColor: 'text-green-400'
-                    },
-                    {
-                        id: 3,
-                        name: 'API Integration',
-                        description: 'Third-party service integration and optimization',
-                        progress: 90,
-                        status: 'pending',
-                        deadline: 'Nov 30, 2024',
-                        team: '3',
-                        icon: 'zap',
-                        iconBg: 'bg-purple-500/20',
-                        iconColor: 'text-purple-400'
-                    },
-                    {
-                        id: 4,
-                        name: 'Database Migration',
-                        description: 'Migrate legacy database to new infrastructure',
-                        progress: 20,
-                        status: 'active',
-                        deadline: 'Jan 20, 2025',
-                        team: '4',
-                        icon: 'database',
-                        iconBg: 'bg-yellow-500/20',
-                        iconColor: 'text-yellow-400'
-                    },
-                    {
-                        id: 5,
-                        name: 'Security Audit',
-                        description: 'Comprehensive security review and improvements',
-                        progress: 60,
-                        status: 'active',
-                        deadline: 'Dec 15, 2024',
-                        team: '2',
-                        icon: 'shield',
-                        iconBg: 'bg-red-500/20',
-                        iconColor: 'text-red-400'
-                    },
-                    {
-                        id: 6,
-                        name: 'Performance Optimization',
-                        description: 'Optimize application performance and loading times',
-                        progress: 35,
-                        status: 'pending',
-                        deadline: 'Mar 10, 2025',
-                        team: '6',
-                        icon: 'activity',
-                        iconBg: 'bg-indigo-500/20',
-                        iconColor: 'text-indigo-400'
-                    }
-                ],
-
-                messages: [{
-                        id: 1,
-                        sender: 'Alice Johnson',
-                        subject: 'Project Update Required',
-                        preview: 'Hi there! Can you please provide an update on the current project status...',
-                        time: '2 hours ago',
-                        read: false,
-                        avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face&auto=format'
-                    },
-                    {
-                        id: 2,
-                        sender: 'Mark Thompson',
-                        subject: 'Budget Approval Needed',
-                        preview: 'The Q4 budget proposal is ready for your review and approval...',
-                        time: '4 hours ago',
-                        read: false,
-                        avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face&auto=format'
-                    },
-                    {
-                        id: 3,
-                        sender: 'Lisa Chen',
-                        subject: 'Team Meeting Scheduled',
-                        preview: 'Our weekly team meeting has been scheduled for tomorrow at 10 AM...',
-                        time: '6 hours ago',
-                        read: true,
-                        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face&auto=format'
-                    },
-                    {
-                        id: 4,
-                        sender: 'Robert Davis',
-                        subject: 'New Feature Request',
-                        preview: 'We have received a new feature request from our premium customers...',
-                        time: '1 day ago',
-                        read: true,
-                        avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face&auto=format'
-                    },
-                    {
-                        id: 5,
-                        sender: 'Emma Wilson',
-                        subject: 'Performance Report',
-                        preview: 'The monthly performance report is now available for review...',
-                        time: '2 days ago',
-                        read: true,
-                        avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=40&h=40&fit=crop&crop=face&auto=format'
-                    }
-                ],
-
                 notifications: [{
                         id: 1,
                         title: 'System Update',
@@ -343,39 +222,8 @@
                     }
                 },
 
-                // setActiveTab(tab) {
-                //     this.activeTab = tab;
-                //     this.closeMobileMenu();
-
-                //     // Reinitialize chart if switching to dashboard
-                //     if (tab === 'dashboard') {
-                //         this.$nextTick(() => {
-                //             this.initChart();
-                //         });
-                //     }
-                // },
-
                 toggleNotifications() {
                     this.showNotifications = !this.showNotifications;
-                },
-
-                // handleSearch() {
-                //     if (this.searchQuery.length > 0) {
-                //         console.log('Searching for:', this.searchQuery);
-                //         // Add search logic here
-                //     }
-                // },
-
-                // focusSearch() {
-                //     const searchInput = document.querySelector('input[type="text"]');
-                //     if (searchInput) {
-                //         searchInput.focus();
-                //     }
-                // },
-
-                showDetails(type) {
-                    console.log('Showing details for:', type);
-                    // Add modal or detailed view logic here
                 },
 
                 initChart() {
@@ -500,17 +348,17 @@
                 const y = e.clientY - rect.top - size / 2;
 
                 ripple.style.cssText = `
-    position: absolute;
-    width: ${size}px;
-    height: ${size}px;
-    left: ${x}px;
-    top: ${y}px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transform: scale(0);
-    animation: ripple 0.6s ease-out;
-    pointer-events: none;
-    `;
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                    `;
 
                 card.style.position = 'relative';
                 card.style.overflow = 'hidden';
@@ -521,19 +369,8 @@
                 }, 600);
             }
         });
-
-        // Add CSS for ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-    @keyframes ripple {
-    to {
-    transform: scale(2);
-    opacity: 0;
-    }
-    }
-    `;
-        document.head.appendChild(style);
     </script>
+    <link rel="stylesheet" href="{{ asset('assets/css/ripple.css') }}">
     {{-- Custom JS --}}
     <script src="{{ asset('assets/js/password.js') }}"></script>
     @fluxScripts()
