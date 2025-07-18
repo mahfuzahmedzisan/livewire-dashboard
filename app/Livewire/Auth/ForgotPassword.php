@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Password;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
-#[Layout('frontend.layouts.app')]
+#[Layout('layouts.frontend.app')]
 class ForgotPassword extends Component
 {
     public string $email = '';

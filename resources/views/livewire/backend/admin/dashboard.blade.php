@@ -4,6 +4,12 @@
     <x-slot name="page_slug">admin-dashboard</x-slot>
 
     <section>
+        <div class="glass-card rounded-2xl p-6 mb-8">
+            <div class="flex items-center justify-center">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white ">Admin Dashboard</h3>
+            </div>
+        </div>
+
         <!-- Stats Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"
             x-transition:enter="transition-all duration-500" x-transition:enter-start="opacity-0 translate-y-8"
@@ -93,7 +99,7 @@
         </div>
 
         <!-- Charts Section -->
-        {{-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" x-transition:enter="transition-all duration-500 delay-200"
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-5" x-transition:enter="transition-all duration-500 delay-200"
             x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
 
             <!-- Main Chart -->
@@ -175,6 +181,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </section>
-</div>
+
+</main>

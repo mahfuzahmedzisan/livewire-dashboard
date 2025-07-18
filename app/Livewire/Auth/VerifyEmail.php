@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
-#[Layout('frontend.layouts.app')]
+#[Layout('layouts.frontend.app')]
 class VerifyEmail extends Component
 {
     /**

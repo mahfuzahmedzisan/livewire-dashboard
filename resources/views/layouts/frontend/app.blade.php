@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    @include('frontend.layouts.includes.head')
+    @include('layouts.frontend.includes.head')
 </head>
 
 <body class="min-h-screen bg-white dark:bg-zinc-800 flex flex-col">
@@ -19,7 +19,7 @@
     </div>
     <x-frontend::footer />
 
-    @include('frontend.layouts.includes.scripts')
+    @include('layouts.frontend.includes.scripts')
 </body>
 
 </html>

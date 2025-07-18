@@ -10,7 +10,7 @@ use Illuminate\Validation\Rules;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
-#[Layout('frontend.layouts.app')]
+#[Layout('layouts.frontend.app')]
 class Register extends Component
 {
     public string $name = '';

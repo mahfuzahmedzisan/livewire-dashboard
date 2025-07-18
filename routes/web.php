@@ -1,6 +1,7 @@
 <?php
 
-use App\Livewire\Admin\Dashboard;
+use App\Livewire\Backend\Admin\Dashboard as AdminDashboard;
+use App\Livewire\Backend\User\Dashboard as UserDashboard;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -17,7 +18,8 @@ Route::get('/',  FrontendHome::class)->name('home');
 //     ->middleware(['auth', 'verified'])
 //     ->name('dashboard');
 
-Route::get('/dashboard', Dashboard::class)->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/dashboard', AdminDashboard::class)->middleware(['auth', 'verified'])->name('admin.dashboard');
+Route::get('/dashboard', UserDashboard::class)->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');

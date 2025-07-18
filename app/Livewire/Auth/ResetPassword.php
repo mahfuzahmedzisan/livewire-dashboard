@@ -12,7 +12,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
 
-#[Layout('frontend.layouts.app')]
+#[Layout('layouts.frontend.app')]
 class ResetPassword extends Component
 {
     #[Locked]

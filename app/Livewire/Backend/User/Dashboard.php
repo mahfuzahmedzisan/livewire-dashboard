@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Livewire\Admin;
+namespace App\Livewire\Backend\User;
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 
-#[Layout('backend.admin.layouts.app')]
+
+#[Layout('layouts.user.app')]
 class Dashboard extends Component
 {
     public function render()
     {
-        return view('backend.admin.dashboard');
+        return view('livewire.backend.user.dashboard');
     }
 }

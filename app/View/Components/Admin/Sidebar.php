@@ -16,6 +16,6 @@ class Sidebar extends Component
     }
     public function render(): View|Closure|string
     {
-        return view('backend.admin.layouts.partials.sidebar');
+        return view('layouts.admin.partials.sidebar');
     }
 }

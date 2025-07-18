@@ -21,6 +21,6 @@ class Notification extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('backend.admin.layouts.partials.notification');
+        return view('layouts.admin.partials.notification');
     }
 }

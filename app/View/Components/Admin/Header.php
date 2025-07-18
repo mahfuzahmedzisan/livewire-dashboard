@@ -18,6 +18,6 @@ class Header extends Component
     }
     public function render(): View|Closure|string
     {
-        return view('backend.admin.layouts.partials.header');
+        return view('layouts.admin.partials.header');
     }
 }

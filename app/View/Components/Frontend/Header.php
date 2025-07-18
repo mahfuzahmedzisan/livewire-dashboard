@@ -21,6 +21,6 @@ class Header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('frontend.layouts.partials.header');
+        return view('layouts.frontend.partials.header');
     }
 }

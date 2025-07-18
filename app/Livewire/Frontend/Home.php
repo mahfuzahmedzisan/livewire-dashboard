@@ -5,11 +5,11 @@ namespace App\Livewire\Frontend;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 
-#[Layout('frontend.layouts.app')]
+#[Layout('layouts.frontend.app')]
 class Home extends Component
 {
     public function render()
     {
-        return view('frontend.pages.home');
+        return view('livewire.frontend.home');
     }
 }
