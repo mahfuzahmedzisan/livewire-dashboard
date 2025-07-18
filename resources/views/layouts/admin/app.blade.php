@@ -17,7 +17,7 @@
     </title>
 
     {{-- Theme selector && Theme store --}}
-    <script>
+    {{-- <script>
         (function() {
             let theme = localStorage.getItem('theme') || 'system';
 
@@ -31,7 +31,7 @@
             }
         })();
     </script>
-    <script src="{{ asset('assets/js/toggle-theme.js') }}"></script>
+    <script src="{{ asset('assets/js/toggle-theme.js') }}"></script> --}}
 
     {{-- BoxIcon  --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -109,7 +109,7 @@
                 // App state
                 // activeTab: 'dashboard',
                 searchQuery: '',
-                darkMode: true,
+                // darkMode: true,
                 showNotifications: false,
 
                 // Data
