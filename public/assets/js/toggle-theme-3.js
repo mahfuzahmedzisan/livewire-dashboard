@@ -24,6 +24,12 @@ document.addEventListener('alpine:init', () => {
                 document.documentElement.classList.toggle('dark', this.current === 'dark');
                 document.documentElement.setAttribute('data-theme', this.current);
             }
+
+            if (window.lucide) {
+                document.addEventListener('DOMContentLoaded', () => {
+                    lucide.createIcons();
+                });
+            }
         },
 
         toggleTheme() {

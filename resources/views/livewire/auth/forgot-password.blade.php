@@ -3,10 +3,10 @@
         <div class="rounded-xl border bg-white dark:bg-stone-950 dark:border-stone-800 text-stone-800 shadow-xs">
             <div class="px-10 py-8">
                 <div class="flex flex-col gap-6 max-w-fit">
-                    <x-auth-header :title="__('Forgot password')" :description="__('Enter your email to receive a password reset link')" />
+                    <livewire:components.auth-header :title="__('Forgot password')" :description="__('Enter your email to receive a password reset link')" />
 
                     <!-- Session Status -->
-                    <x-auth-session-status class="text-center" :status="session('status')" />
+                    <livewire:components.auth-session-status class="text-center" :status="session('status')" />
 
                     <form wire:submit="sendPasswordResetLink" class="flex flex-col gap-6">
                         <!-- Email Address -->

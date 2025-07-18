@@ -2,25 +2,30 @@
 
 namespace App\Livewire\Settings;
 
-use App\Livewire\Actions\Logout;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class DeleteUserForm extends Component
 {
-    public string $password = '';
+    public $password = '';
 
-    /**
-     * Delete the currently authenticated user.
-     */
-    public function deleteUser(Logout $logout): void
+    public function deleteUser()
     {
         $this->validate([
             'password' => ['required', 'string', 'current_password'],
         ]);
 
-        tap(Auth::user(), $logout(...))->delete();
+        Auth::user()->delete();
 
-        $this->redirect('/', navigate: true);
+        session()->flash('status', 'account-deleted');
+
+        return $this->redirect('/', navigate: true);
+    }
+
+    public function render()
+    {
+        return view('livewire.settings.delete-user-form');
     }
 }

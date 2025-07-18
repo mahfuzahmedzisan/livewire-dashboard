@@ -117,5 +117,7 @@
 </div>
 
 <script>
-    lucide.createIcons();
+    document.addEventListener('DOMContentLoaded', function() {
+        lucide.createIcons();
+    });
 </script>

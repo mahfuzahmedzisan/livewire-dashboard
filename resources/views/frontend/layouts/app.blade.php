@@ -2,14 +2,14 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    @include('frontend.layouts.includes.head')
+    <livewire:frontend.layouts.includes.head />
 </head>
 
 <body class="min-h-screen bg-white dark:bg-zinc-800 flex flex-col">
-    <x-frontend::header />
+    <livewire:frontend.layouts.partials.header />
     <div class="flex flex-1">
         {{-- Sidebar --}}
-        <x-frontend::sidebar :page_slug="$page_slug ?? null" />
+        <livewire:frontend.layouts.partials.sidebar :page_slug="$page_slug ?? null" />
 
         {{-- Main Content Area --}}
         <div class="flex-grow">
@@ -17,9 +17,9 @@
         </div>
 
     </div>
-    <x-frontend::footer />
+    <livewire:frontend.layouts.partials.footer />
 
-    @include('frontend.layouts.includes.scripts')
+    <livewire:frontend.layouts.includes.scripts />
 </body>
 
 </html>

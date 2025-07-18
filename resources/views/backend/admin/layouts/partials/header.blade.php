@@ -22,7 +22,7 @@
             <!-- Header Actions -->
             <div class="flex items-center gap-3">
                 <!-- Search -->
-                <x-admin.search-form placeholder="Search here..." />
+                <livewire:components.admin.search-form placeholder="Search here..." />
 
                 {{-- <!-- Theme Toggle --> --}}
                 <!-- Theme Toggle Button (Only Light/Dark) -->
@@ -69,8 +69,8 @@
                         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                         class="hidden absolute right-0 mt-2 w-fit min-w-40 glass-card bg-bg-white dark:bg-bg-dark-tertiary rounded-xl shadow-lg py-2 z-50"
                         :class="open ? '!block' : '!hidden'">
-                        <x-admin.profile-navlink route="#" name="{{ __('Profile') }}" />
-                        <x-admin.profile-navlink route="#" name="{{ __('Settings') }}" />
+                        <livewire:components.admin.profile-navlink route="#" name="{{ __('Profile') }}" />
+                        <livewire:components.admin.profile-navlink route="#" name="{{ __('Settings') }}" />
                         <x-admin.profile-navlink route="{{ route('logout') }}" logout='true'
                             name="{{ __('Sign Out') }}" />
                         {{-- <a href="#"

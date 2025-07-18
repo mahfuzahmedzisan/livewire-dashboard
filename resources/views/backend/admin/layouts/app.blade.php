@@ -94,7 +94,7 @@
     </div>
 
     <!-- Notification Panel -->
-    <x-admin::notification />
+    <livewire:admin.layouts.partials.notification />
 
     <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
     <script>

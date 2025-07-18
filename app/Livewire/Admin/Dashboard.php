@@ -3,13 +3,21 @@
 namespace App\Livewire\Admin;
 
 use Livewire\Component;
-use Livewire\Attributes\Layout;
 
-#[Layout('backend.admin.layouts.app')]
 class Dashboard extends Component
 {
+    public $title = 'Admin Dashboard';
+    public $breadcrumb = 'Dashboard';
+    public $page_slug = 'admin-dashboard';
+
+    public function showDetails($type)
+    {
+        // Emit an event to open the details modal
+        $this->dispatch('open-details-modal', type: $type);
+    }
+
     public function render()
     {
-        return view('backend.admin.dashboard');
+        return view('livewire.admin.dashboard');
     }
 }

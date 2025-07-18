@@ -3,23 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     destroyAllEditors();
     const textAreas = $("textarea.textarea:not(.no-ckeditor5)");
-    textAreas.each((index, textArea) => {
-        const currentConfig = { ...CkEditorConfig };
-        currentConfig.initialData = textArea.value;
-
-        CkClassicEditor.create(textArea, currentConfig)
-            .then((editor) => {
-                // console.log("Test");
-                // console.log("Editor was initialized", editor);
-            })
-            .catch((error) => {
-                console.error(`Error initializing editor ${index + 1}:`, error);
-                // Add error handling here, e.g., display error message to user
-                alert(
-                    `Error initializing editor ${index + 1}: ${error.message}`
-                );
-            });
-    });
+    initializeCKEditor(textAreas);
 });
 const editors = [];
 function initializeCKEditor(textAreas) {

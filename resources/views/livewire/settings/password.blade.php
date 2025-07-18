@@ -1,5 +1,5 @@
 <section class="w-full">
-    @include('partials.settings-heading')
+    <livewire:components.partials.settings-heading />
 
     <x-settings.layout :heading="__('Update password')" :subheading="__('Ensure your account is using a long, random password to stay secure')">
         <form wire:submit="updatePassword" class="mt-6 space-y-6">
@@ -30,9 +30,7 @@
                     <flux:button variant="primary" type="submit" class="w-full">{{ __('Save') }}</flux:button>
                 </div>
 
-                <x-action-message class="me-3" on="password-updated">
-                    {{ __('Saved.') }}
-                </x-action-message>
+                <livewire:components.action-message class="me-3" on="password-updated" />
             </div>
         </form>
     </x-settings.layout>
