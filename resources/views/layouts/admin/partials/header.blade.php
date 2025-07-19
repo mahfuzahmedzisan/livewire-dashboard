@@ -16,7 +16,7 @@
                 <div class="hidden sm:block">
                     <h1 class="text-xl lg:text-2xl font-bold text-text-primary">Good morning,
                         Alex!</h1>
-                    <p class="text-text-light-secondary text-text-secondary text-sm">Here's what's happening
+                    <p class="text-text-secondary text-text-secondary text-sm">Here's what's happening
                         today
                     </p>
                 </div>

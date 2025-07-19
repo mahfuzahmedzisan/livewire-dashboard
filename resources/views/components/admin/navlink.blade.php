@@ -116,18 +116,17 @@
             <!-- Single Navlink (like original single-navlink) -->
             @if (empty($permission) || auth()->user()->can($permission))
                 <a href="{{ $route }}" wire:navigate
-                    class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-teritary/10 dark:hover:bg-bg-white/10 text-text-primary transition-all duration-200 group {{ $isMainActive ? 'active' : '' }}">
+                    class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-primary/50 text-text-primary transition-all duration-200 group {{ $isMainActive ? 'active' : '' }}">
                     <div
-                        class="w-8 h-8 bg-bg-teritary/10 dark:bg-bg-white/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
+                        class="w-8 h-8 glass-card rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
                         @if ($boxicon)
                             <i class="{{ $defaultParentIcon }} text-text-primary"></i>
                         @else
-                            <flux:icon name="{{ $defaultParentIcon }}"
-                                class="w-5 h-5 text-black dark:text-white flex-shrink-0" />
+                            <flux:icon name="{{ $defaultParentIcon }}" class="w-5 h-5 text-text-primary flex-shrink-0" />
                         @endif
                         <!-- Active indicator for collapsed state -->
                         <div x-show="!((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) && {{ $isAnyActive ? 'true' : 'false' }}"
-                            class="absolute -top-1 -right-1 w-3 h-3 bg-violet-400 dark:bg-violet-300 rounded-full animate-pulse invisible"
+                            class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse invisible"
                             :class="{
                                 'visible': !((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) &&
                                     {{ $isAnyActive ? 'true' : 'false' }}
@@ -141,10 +140,10 @@
                         x-transition:leave="transition-all duration-200"
                         x-transition:leave-start="opacity-100 translate-x-0"
                         x-transition:leave-end="opacity-0 -translate-x-4"
-                        class="font-medium {{ $isMainActive ? 'text-text-primary ' : 'text-text-light-secondary ' }}">{{ __($name) }}</span>
+                        class="font-medium {{ $isMainActive ? 'text-text-primary ' : 'text-text-secondary ' }}">{{ __($name) }}</span>
                     <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                         class="ml-auto {{ $isMainActive ? 'block' : 'hidden' }}">
-                        <div class="w-2 h-2 bg-violet-400 dark:bg-violet-300 rounded-full animate-pulse"></div>
+                        <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
                     </div>
                 </a>
             @endif
@@ -152,20 +151,19 @@
             <!-- Dropdown Button -->
             <button
                 @click="((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) ? (open = !open) : toggleCollapsedDropdown()"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-teritary/10 dark:hover:bg-bg-white/10 text-text-primary transition-all duration-200 group w-full {{ $isAnyActive ? 'active' : '' }}">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-primary text-text-primary transition-all duration-200 group w-full {{ $isAnyActive ? 'active' : '' }}">
                 {{-- relative --}}
                 <div
-                    class="w-8 h-8 bg-bg-teritary/10 dark:bg-bg-white/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
+                    class="w-8 h-8 glass-card rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
                     @if ($boxicon)
-                        <i class="{{ $defaultParentIcon }} text-blue"></i>
+                        <i class="{{ $defaultParentIcon }} text-text-primary"></i>
                     @else
-                        <flux:icon name="{{ $defaultParentIcon }}"
-                            class="w-5 h-5 text-black dark:text-white flex-shrink-0" />
+                        <flux:icon name="{{ $defaultParentIcon }}" class="w-5 h-5 text-text-primary flex-shrink-0" />
                     @endif
 
                     <!-- Active indicator for collapsed state -->
                     <div x-show="!((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) && {{ $isAnyActive ? 'true' : 'false' }}"
-                        class="absolute -top-1 -right-1 w-3 h-3 bg-violet-400 dark:bg-violet-300 rounded-full animate-pulse invisible"
+                        class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse invisible"
                         :class="{
                             'visible': !((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) &&
                                 {{ $isAnyActive ? 'true' : 'false' }}
@@ -179,12 +177,12 @@
                     x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition-all duration-200"
                     x-transition:leave-start="opacity-100 translate-x-0"
                     x-transition:leave-end="opacity-0 -translate-x-4"
-                    class="font-medium text-left {{ $isAnyActive ? 'text-text-primary ' : 'text-text-light-secondary ' }}">{{ __($name) }}</span>
+                    class="font-medium text-left {{ $isAnyActive ? 'text-text-primary ' : 'text-text-secondary ' }}">{{ __($name) }}</span>
 
                 <!-- Dropdown Arrow for expanded state -->
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                     class="ml-auto transition-transform duration-200" :class="open ? 'rotate-180' : ''">
-                    <flux:icon name="chevron-down" class="w-5 h-5 text-black dark:text-white flex-shrink-0" />
+                    <flux:icon name="chevron-down" class="w-5 h-5 text-text-primary flex-shrink-0" />
                 </div>
             </button>
         @endif
@@ -199,7 +197,7 @@
                 x-transition:leave="transition-all duration-200 ease-in"
                 x-transition:leave-start="opacity-100 translate-x-0 scale-100"
                 x-transition:leave-end="opacity-0 translate-x-2 scale-95"
-                class="hidden absolute z-[9999] min-w-64 max-w-80 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 py-3 right-full ml-2 top-0"
+                class="hidden absolute z-[9999] min-w-64 max-w-80 bg-bg-primary rounded-xl shadow-2xl border border-zinc-800 dark:border-zinc-700 py-3 right-full ml-2 top-0"
                 :class="(collapsedDropdown && !((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) ? '!block' :
                     '!hidden')"
                 style="backdrop-filter: blur(12px);" x-init="// Calculate position relative  to the trigger button
@@ -247,20 +245,19 @@
                 }">
 
                 <!-- Header -->
-                <div class="px-4 pb-3 border-b border-gray-200 dark:border-gray-700">
+                <div class="px-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
                     <div class="flex items-center gap-3">
-                        <div
-                            class="w-8 h-8 bg-violet-100 dark:bg-violet-900/30 rounded-lg flex items-center justify-center">
+                        <div class="w-8 h-8 glass-card rounded-lg flex items-center justify-center">
                             @if ($boxicon)
-                                <i class="{{ $defaultParentIcon }} text-violet-600 dark:text-violet-400"></i>
+                                <i class="{{ $defaultParentIcon }} text-text-primary"></i>
                             @else
                                 <flux:icon name="{{ $defaultParentIcon }}"
-                                    class="w-5 h-5 text-black dark:text-white flex-shrink-0" />
+                                    class="w-5 h-5 text-text-primary flex-shrink-0" />
                             @endif
                         </div>
                         <div>
-                            <h3 class="font-semibold text-gray-900 dark:text-white text-sm">{{ __($name) }}</h3>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">{{ count($items) }} items</p>
+                            <h3 class="font-semibold text-text-primary text-sm">{{ __($name) }}</h3>
+                            <p class="text-xs text-text-secondary">{{ count($items) }} {{ __('items') }}</p>
                         </div>
                     </div>
                 </div>
@@ -277,24 +274,24 @@
                             <!-- Single Navigation Item -->
                             <a href="{{ empty($item['route']) ? 'javascript:void(0);' : $item['route'] }}"
                                 wire:navigate
-                                class="flex items-center gap-3 p-3 mx-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all duration-200 group {{ isset($item['active']) && $page_slug == $item['active'] ? 'bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800' : '' }}">
+                                class="flex items-center gap-3 p-3 mx-2 rounded-lg hover:bg-bg-teritary/50 transition-all duration-200 group {{ isset($item['active']) && $page_slug == $item['active'] ? 'bg-zinc-50 dark:bg-zinc-900/20 border border-zinc-200 dark:border-zinc-800' : '' }}">
                                 <div
-                                    class="w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                                    class="w-8 h-8 glass-card rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
                                     @if ($subitemBoxicon)
                                         <i
-                                            class="{{ $subitemIcon }} text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-gray-600 dark:text-gray-400' }}"></i>
+                                            class="{{ $subitemIcon }} text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-accent' : 'text-text-secondary' }}"></i>
                                     @else
                                         <flux:icon name="{{ $subitemIcon }}"
                                             class="w-5 h-5 text-black dark:text-white flex-shrink-0"
-                                            class="w-4 h-4 {{ isset($item['active']) && $page_slug == $item['active'] ? 'stroke-violet-600 dark:stroke-violet-400' : 'stroke-gray-600 dark:stroke-gray-400' }}" />
+                                            class="w-4 h-4 {{ isset($item['active']) && $page_slug == $item['active'] ? 'stroke-accent dark:stroke-accent' : 'stroke-zinc-500 dark:stroke-zinc-400' }}" />
                                     @endif
                                 </div>
                                 <div class="flex-1">
                                     <span
-                                        class="font-medium text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-700 dark:text-violet-300' : 'text-gray-700 dark:text-gray-300' }}">{{ __($item['name']) }}</span>
+                                        class="font-medium text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-accent' : 'text-text-teritary' }}">{{ __($item['name']) }}</span>
                                 </div>
                                 @if (isset($item['active']) && $page_slug == $item['active'])
-                                    <div class="w-2 h-2 bg-violet-400 dark:bg-violet-300 rounded-full animate-pulse">
+                                    <div class="w-2 h-2 bg-accent rounded-full animate-pulse">
                                     </div>
                                 @endif
                             </a>
@@ -441,7 +438,7 @@
                                 @endif
                             </div>
                             <span
-                                class="font-medium text-sm  text-left {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-light-secondary ' }}">{{ __($item['name']) }}</span>
+                                class="font-medium text-sm  text-left {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-secondary ' }}">{{ __($item['name']) }}</span>
                         </a>
                     @elseif (isset($item['subitems']) && count($item['subitems']) > 0)
                         <!-- Multi-dropdown item -->
@@ -456,7 +453,7 @@
                             })() }}
                         }">
                             <button @click="subOpen = !subOpen"
-                                class="flex items-center gap-3 p-2 rounded-lg hover:bg-bg-black/5 dark:hover:bg-bg-white/5 text-text-light-secondary  transition-all duration-200 w-full group">
+                                class="flex items-center gap-3 p-2 rounded-lg hover:bg-bg-black/5 dark:hover:bg-bg-white/5 text-text-secondary  transition-all duration-200 w-full group">
                                 <div
                                     class="w-6 h-6 bg-bg-black/5 dark:bg-bg-white/5 rounded-md flex items-center justify-center group-hover:scale-110 transition-transform">
                                     @if ($subitemBoxicon)
@@ -497,7 +494,7 @@
                                             @endif
                                         </div>
                                         <span
-                                            class="font-medium text-xs {{ isset($subitem['active']) && $page_slug == $subitem['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-light-secondary ' }}">{{ __($subitem['name']) }}</span>
+                                            class="font-medium text-xs {{ isset($subitem['active']) && $page_slug == $subitem['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-secondary ' }}">{{ __($subitem['name']) }}</span>
                                         @if (isset($subitem['active']) && $page_slug == $subitem['active'])
                                             <div class="ml-auto">
                                                 <div
@@ -522,7 +519,7 @@
                                 @endif
                             </div>
                             <span
-                                class="font-medium text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-light-secondary ' }}">{{ __($item['name']) }}</span>
+                                class="font-medium text-sm {{ isset($item['active']) && $page_slug == $item['active'] ? 'text-violet-600 dark:text-violet-400' : 'text-text-secondary ' }}">{{ __($item['name']) }}</span>
                             @if (isset($item['active']) && $page_slug == $item['active'])
                                 <div class="ml-auto">
                                     <div

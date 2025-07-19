@@ -23,7 +23,7 @@
                     x-transition:leave-start="opacity-100 translate-x-0"
                     x-transition:leave-end="opacity-0 -translate-x-4">
                     <h1 class="text-xl font-bold text-text-primary ">Dashboard</h1>
-                    <p class="text-text-light-secondary  text-sm">Dashboard Pro</p>
+                    <p class="text-text-secondary  text-sm">Dashboard Pro</p>
                 </div>
             </div>
         </a>

@@ -9,9 +9,8 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
 
-    /* Colors */
+:root {
     --color-primary-50: var(--color-violet-50);
     --color-primary-100: var(--color-violet-100);
     --color-primary-200: var(--color-violet-200);
@@ -24,14 +23,42 @@
     --color-primary-900: var(--color-violet-900);
     --color-primary-950: var(--color-violet-950);
 
-    --color-text-primary: var(--color-gray-900);
-    --color-text-secondary: var(--color-gray-700);
-    --color-text-tertiary: var(--color-gray-600);
-    --color-text-muted: var(--color-gray-500);
+    --color-text-light-primary: var(--color-gray-900);
+    --color-text-light-secondary: var(--color-gray-700);
+    --color-text-light-tertiary: var(--color-gray-600);
+    --color-text-light-muted: var(--color-gray-500);
 
-    --color-bg-primary: oklch(98.5% 0 0);
-    --color-bg-secondary: oklch(96.7% 0.001 286.375);
-    --color-bg-tertiary: oklch(92% 0.004 286.32);
+    --color-text-dark-primary: var(--color-gray-100);
+    --color-text-dark-secondary: var(--color-gray-300);
+    --color-text-dark-tertiary: var(--color-gray-400);
+    --color-text-dark-muted: var(--color-gray-500);
+
+    --color-bg-light-primary: oklch(98.5% 0 0);
+    --color-bg-light-secondary: oklch(96.7% 0.001 286.375);
+    --color-bg-light-tertiary: oklch(92% 0.004 286.32);
+
+    --color-bg-dark-primary: oklch(21% 0.006 285.885);
+    --color-bg-dark-secondary: oklch(27.4% 0.006 286.033);
+    --color-bg-dark-tertiary: oklch(37% 0.013 285.805);
+
+    --color-light-accent: var(--color-sky-600);
+    --color-light-accent-content: var(--color-sky-600);
+    --color-light-accent-foreground: var(--color-white);
+
+    --color-dark-accent: var(--color-sky-400);
+    --color-dark-accent-content: var(--color-sky-400);
+    --color-dark-accent-foreground: var(--color-white);
+}
+
+@theme {
+    --color-text-primary: var(--color-text-light-primary);
+    --color-text-secondary: var(--color-text-light-secondary);
+    --color-text-tertiary: var(--color-text-light-tertiary);
+    --color-text-muted: var(--color-text-light-muted);
+
+    --color-bg-primary: var(--color-bg-light-primary);
+    --color-bg-secondary: var(--color-bg-light-secondary);
+    --color-bg-tertiary: var(--color-bg-light-tertiary);
 
     --color-zinc-50: var(--color-primary-50);
     --color-zinc-100: var(--color-primary-100);
@@ -45,10 +72,23 @@
     --color-zinc-900: var(--color-primary-900);
     --color-zinc-950: var(--color-primary-950);
 
-    --color-accent: var(--color-primary-600) !important;
-    --color-accent-content: var(--color-primary-600);
-    --color-accent-foreground: var(--color-white);
+    --color-accent: var(--color-light-accent);
+    --color-accent-content: var(--color-light-accent-content);
+    --color-accent-foreground: var(--color-light-accent-foreground);
 
+    /* Breakpoints  */
+    --breakpoint-xxs: 480px;
+    --breakpoint-xs: 576px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1024px;
+    --breakpoint-2xl: 1280px;
+    --breakpoint-3xl: 1536px;
+    --breakpoint-4xl: 1920px;
+    --breakpoint-5xl: 2560px;
+
+    /* Shadows */
     --shadow-glass-card: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
         rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
@@ -72,18 +112,18 @@
 
 @layer theme {
     .dark {
-        --color-accent: var(--color-primary-400) !important;
-        --color-accent-content: var(--color-primary-400);
-        --color-accent-foreground: var(--color-white);
+        --color-accent: var(--color-dark-accent) !important;
+        --color-accent-content: var(--color-dark-accent-content);
+        --color-accent-foreground: var(--color-dark-accent-foreground);
 
-        --color-text-primary: var(--color-gray-100);
-        --color-text-secondary: var(--color-gray-300);
-        --color-text-tertiary: var(--color-gray-400);
-        --color-text-muted: var(--color-gray-500);
+        --color-text-primary: var(--color-text-dark-primary);
+        --color-text-secondary: var(--color-text-dark-secondary);
+        --color-text-tertiary: var(--color-text-dark-tertiary);
+        --color-text-muted: var(--color-text-dark-muted);
 
-        --color-bg-primary: oklch(21% 0.006 285.885);
-        --color-bg-secondary: oklch(27.4% 0.006 286.033);
-        --color-bg-tertiary: oklch(37% 0.013 285.805);
+        --color-bg-primary: var(--color-bg-dark-primary);
+        --color-bg-secondary: var(--color-bg-dark-secondary);
+        --color-bg-tertiary: var(--color-bg-dark-tertiary);
     }
 }
 
@@ -103,7 +143,7 @@
 
     .dark .glass-card,
     .dark .sidebar-glass-card {
-        @apply from-zinc-50/10 via-accent/20 to-zinc-50/10;
+        @apply from-zinc-50/10 via-teal-600/20 to-zinc-50/10;
     }
 
     .sidebar-glass-card {
@@ -124,5 +164,5 @@
 }
 
 [data-flux-label] {
-    @apply mb-0! leading-tight!;
+    @apply !mb-0 !leading-tight;
 }
