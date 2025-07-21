@@ -116,13 +116,13 @@
             <!-- Single Navlink (like original single-navlink) -->
             @if (empty($permission) || auth()->user()->can($permission))
                 <a href="{{ $route }}" wire:navigate
-                    class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-primary/50 text-text-primary transition-all duration-200 group {{ $isMainActive ? 'active' : '' }}">
+                    class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-primary text-text-primary transition-all duration-200 group {{ $isMainActive ? 'bg-bg-primary/80' : '' }}">
                     <div
                         class="w-8 h-8 glass-card rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
                         @if ($boxicon)
-                            <i class="{{ $defaultParentIcon }} text-text-primary"></i>
+                            <i class="{{ $defaultParentIcon }} {{$isMainActive ? 'text-accent' : ' text-text-primary'}}"></i>
                         @else
-                            <flux:icon name="{{ $defaultParentIcon }}" class="w-5 h-5 text-text-primary flex-shrink-0" />
+                            <flux:icon name="{{ $defaultParentIcon }}" class="w-5 h-5 flex-shrink-0 {{$isMainActive ? 'text-accent' : 'text-text-primary'}}" />
                         @endif
                         <!-- Active indicator for collapsed state -->
                         <div x-show="!((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) && {{ $isAnyActive ? 'true' : 'false' }}"
@@ -140,7 +140,7 @@
                         x-transition:leave="transition-all duration-200"
                         x-transition:leave-start="opacity-100 translate-x-0"
                         x-transition:leave-end="opacity-0 -translate-x-4"
-                        class="font-medium {{ $isMainActive ? 'text-text-primary ' : 'text-text-secondary ' }}">{{ __($name) }}</span>
+                        class="font-medium {{ $isMainActive ? 'text-accent-content ' : 'text-text-primary ' }}">{{ __($name) }}</span>
                     <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                         class="ml-auto {{ $isMainActive ? 'block' : 'hidden' }}">
                         <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
@@ -151,14 +151,14 @@
             <!-- Dropdown Button -->
             <button
                 @click="((desktop && sidebar_expanded) || (!desktop && mobile_menu_open)) ? (open = !open) : toggleCollapsedDropdown()"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-primary text-text-primary transition-all duration-200 group w-full {{ $isAnyActive ? 'active' : '' }}">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-bg-primary text-text-primary transition-all duration-200 group w-full {{ $isAnyActive ? 'bg-bg-primary/80' : '' }}">
                 {{-- relative --}}
                 <div
                     class="w-8 h-8 glass-card rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
                     @if ($boxicon)
-                        <i class="{{ $defaultParentIcon }} text-text-primary"></i>
+                        <i class="{{ $defaultParentIcon }} {{ $isAnyActive ? 'text-accent' : 'text-text-primary'}}"></i>
                     @else
-                        <flux:icon name="{{ $defaultParentIcon }}" class="w-5 h-5 text-text-primary flex-shrink-0" />
+                        <flux:icon name="{{ $defaultParentIcon }}" class="w-5 h-5 flex-shrink-0 {{ $isAnyActive ? 'text-accent' : 'text-text-primary'}}" />
                     @endif
 
                     <!-- Active indicator for collapsed state -->

@@ -10,11 +10,10 @@
 
     <div class="sidebar-glass-card h-full custom-scrollbar rounded-xl overflow-y-auto">
         <!-- Sidebar Header -->
-        <a href="{{ route('admin.dashboard') }}" wire:navigate class="p-3 border-b border-white/10 inline-block">
+        <a href="{{ route('admin.dashboard') }}" wire:navigate class="p-4 inline-block">
             <div class="flex items-center gap-4">
-                <div
-                    class="w-10 h-10 glass-card shadow inset-shadow-lg bg-bg-white dark:bg-bg-black p-0 rounded-xl flex items-center justify-center">
-                    <flux:icon name="bolt" class="!w-4 !h-4" />
+                <div class="w-10 h-10 glass-card shadow inset-shadow-lg p-0 rounded-xl flex items-center justify-center">
+                    <flux:icon name="bolt" class="w-5 h-5 text-text-primary" />
                 </div>
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                     x-transition:enter="transition-all duration-300 delay-75"
@@ -27,6 +26,9 @@
                 </div>
             </div>
         </a>
+
+        <flux:separator class="bg-accent!"/>
+
         <!-- Navigation Menu -->
         <nav class="p-2 space-y-2">
             <!-- Dashboard -->
@@ -45,7 +47,7 @@
                         'name' => 'Admin',
                         'route' => '#',
                         'icon' => 'user-circle',
-                        'active' => 'admin',
+                        'active' => 'admin-dashboard',
                     ],
                     [
                         'name' => 'Role',
@@ -95,7 +97,7 @@
                                 'name' => 'Subitem 2',
                                 'route' => '#',
                                 'icon' => 'user',
-                                'active' => 'admin-users',
+                                'active' => 'admin-dashboard',
                             ],
                         ],
                     ],

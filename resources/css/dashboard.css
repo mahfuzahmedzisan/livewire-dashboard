@@ -42,11 +42,11 @@
     --color-bg-dark-tertiary: oklch(37% 0.013 285.805);
 
     --color-light-accent: var(--color-sky-600);
-    --color-light-accent-content: var(--color-sky-600);
+    --color-light-accent-content: var(--color-violet-600);
     --color-light-accent-foreground: var(--color-white);
 
     --color-dark-accent: var(--color-sky-400);
-    --color-dark-accent-content: var(--color-sky-400);
+    --color-dark-accent-content: var(--color-violet-400);
     --color-dark-accent-foreground: var(--color-white);
 }
 
@@ -111,10 +111,17 @@
 }
 
 @layer theme {
+
+    :root {
+        --color-accent: var(--color-light-accent) !important;
+        --color-accent-content: var(--color-light-accent-content) !important;
+        --color-accent-foreground: var(--color-light-accent-foreground) !important;
+    }
+
     .dark {
         --color-accent: var(--color-dark-accent) !important;
-        --color-accent-content: var(--color-dark-accent-content);
-        --color-accent-foreground: var(--color-dark-accent-foreground);
+        --color-accent-content: var(--color-dark-accent-content) !important;
+        --color-accent-foreground: var(--color-dark-accent-foreground) !important;
 
         --color-text-primary: var(--color-text-dark-primary);
         --color-text-secondary: var(--color-text-dark-secondary);
